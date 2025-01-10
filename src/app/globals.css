@@ -9,7 +9,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: ;
     --foreground: #ededed;
   }
 }
@@ -20,16 +20,30 @@ body {
   font-family: "Inter";
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 html {
   scroll-behavior: smooth;
 }
-
-.bg-gradient-primary {
-  @apply bg-gradient-to-r from-purple-light to-blue;
+/*PRIMARY TAILWIND CONFIG*/
+.text-gradient-primary {
+  background: linear-gradient(to right, #CAA6FF, #003DFF, #9333ea );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
+/*SECONDARY TAILWIND CONFIG*/
 .bg-gradient-secondary {
-  @apply bg-gradient-to-r from-blue to-purple;
+  /*background: linear-gradient(to right, #3B6AFF, #6600FF);  Substitua pelos valores das suas cores */
+  transition:  0.3s ease;
+  background: #6600FF;
+}
+.bg-gradient-secondary:hover {
+  background: #6630FF;
+}
+
+/*TERTIARY TAILWIND CONFIG*/
+.b-gradient-secondary{
+  border: solid 2px linear-gradient(to right, #3B6AFF, #6600FF);
 }

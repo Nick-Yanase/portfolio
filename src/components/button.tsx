@@ -5,14 +5,13 @@ const buttonVariants = tv({
   base: "px-7 font-semibold flex items-center justify-center gap-2 rounded-2xl transition-all ",
   variants: {
     variant: {
-        primary: "bg-gradient-primary text-white hover:bg-gradient-secondary",
+        primary: "bg-gradient-primary text-white ",
         secondary:
-          "bg-purple text-white hover:bg-gradient-to-r hover:from-purple-light hover:to-blue",
+          "bg-gradient-secondary text-white",
     },
     size: {
       default: "py-4",
       full: "w-full h-11",
-      circle: "rounded-full size-30",
     },
   },
   defaultVariants: {

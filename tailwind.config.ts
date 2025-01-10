@@ -10,7 +10,7 @@ export default {
     extend: {
       colors: {
         "blue": "#3B6AFF",
-        "purple": "#6600FF",
+        "purple": "#6620FF",
         "purple-light": "#CAA6FF",
         background: "var(--background)",
         foreground: "var(--foreground)",
