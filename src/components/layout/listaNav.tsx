@@ -1,8 +1,11 @@
 import Link from "next/link";
 
-export default function ListaNav() {
+export interface listaNavProps{
+  className?: String;
+}
+export default function ListaNav(props: listaNavProps) {
   return(
-    <ul className="flex gap-10 text-zinc-400">
+    <ul className={`flex gap-10 text-zinc-400 ${props.className}`}>
       <li className="transition-all duration-300 hover:text-white">
         <Link href={"/"}>Home</Link>
       </li>
