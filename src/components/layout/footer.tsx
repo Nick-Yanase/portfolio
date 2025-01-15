@@ -60,19 +60,19 @@ export default function Footer() {
           </div>
           <div className="w-3/4 gap-20 flex flex-col md:flex-row justify-start md:justify-end items-start">
             <div className="flex flex-col gap-5">
-            <TextGradient 
-              primaryColor="#CAA6FF" secondaryColor="#003DFF"
-              text="Navegação"
-              className="text-2xl font-bold"
-            />
+             <TextGradient 
+                primaryColor="#CAA6FF" 
+                secondaryColor="#003DFF"
+                className="text-2xl font-bold">Navegação 
+              </TextGradient>
               <ListaNav className={"flex-col gap-5"} />
             </div>
             <div className="flex flex-col gap-5">
-            <TextGradient 
-              primaryColor="#CAA6FF" secondaryColor="#003DFF"
-              text="Contato"
-              className="text-2xl font-bold"
-            />
+              <TextGradient 
+                primaryColor="#CAA6FF" 
+                secondaryColor="#003DFF"
+                className="text-2xl font-bold">Contato 
+              </TextGradient>
               <ul className="flex gap-5 text-zinc-400 flex-col">
                 <li className="transition all durantion-500 hover:text-white">
                   <Link href="https://wa.me/5511955206286?text=Olá!%20Gostaria%20de%20conversar%20com%20você."className="flex gap-2"><IconDeviceMobile />
@@ -98,8 +98,13 @@ export default function Footer() {
           <div className="w-full h-[3px] rounded-lg bg-zinc-500" />
           <div className="flex flex-col md:flex-row justify-center md:justify-between items-center text-sm text-zinc-400 ">
             <p className="text-center">© Copyright 2024. Desenvolvido por Nicolas Yanase</p>
-            <p className=" font-semibold flex gap-2">Feito com 
-              <TextGradient primaryColor="#CAA6FF" secondaryColor="#003DFF"text="❤️"/> em São Paulo</p>
+            <p className=" font-semibold flex gap-2 items-center">Feito com 
+            <TextGradient 
+                primaryColor="#CAA6FF" 
+                secondaryColor="#003DFF"
+                className="text-base font-bold">❤️ 
+              </TextGradient>
+               em São Paulo</p>
           </div>
         </div>
       </div>

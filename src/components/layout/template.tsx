@@ -11,7 +11,7 @@ export default function Template(props: templateProps) {
     <div className="flex flex-col">
       <Header />
       <main
-        className={`w-full flex-col justify-center items-center bg-zinc-950 ${
+        className={`w-full flex-col flex justify-center items-center bg-zinc-950 ${
           props.className ?? ``
         }`}
       >
