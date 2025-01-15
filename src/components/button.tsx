@@ -3,10 +3,10 @@ import { ComponentProps } from "react";
 import { tv, VariantProps } from "tailwind-variants";
 
 const buttonVariants = tv({
-  base: "px-10 py-4 text-white font-semibold rounded-2xl transition-all flex items-center justify-center gap-2 ",
+  base: "px-5 lg:px-10 py-4 text-white font-semibold rounded-2xl transition-all flex items-center justify-center gap-2 ",
   variants: {
     variant: {
-        primary: "relative bg-gradient-to-r from-[#3B6AFF] to-[#6620FF] bg-[length:100%_450%] bg-[position:0%_0%] hover:bg-[length:300%_10%]",
+        primary: "relative bg-gradient-to-r from-[#3B6AFF] to-[#6620FF] bg-[length:100%_450%] bg-[position:0%_0%] hover:bg-[length:300%_10%] ",
         secondary:
           "bg-gradient-secondary text-white",
     },

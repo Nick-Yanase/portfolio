@@ -12,10 +12,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet"
-      />
       <link rel="icon" type="image/png" sizes="32x32" href="../../fav.ico"></link>
       <body
         className={`antialiased`}
