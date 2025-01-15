@@ -6,7 +6,7 @@ export interface listaNavProps{
 }
 export default function ListaNav(props: listaNavProps) {
   return(
-    <ul className={`flex gap-8 md:gap-5 lg:gap-10 text-zinc-400 ${props.className}`}>
+    <ul className={`flex gap-8 md:gap-5 text-zinc-400 ${props.className}`}>
       <li className="transition-all duration-300 hover:text-white">
         <Link href={"/"} className="flex gap-2"><IconHome className="md:hidden"/> Home</Link>
       </li>
