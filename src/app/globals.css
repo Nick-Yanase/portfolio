@@ -31,6 +31,99 @@ html {
 .b-gradient-secondary{
   border: solid 2px linear-gradient(to right, #3B6AFF, #6600FF);
 }
+
+.animated-border {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: transparent;
+  border-radius: 8px;
+  border: 2px solid transparent; /* Borda inicial transparente */
+  cursor: pointer;
+  z-index: 1;
+  transition: color 0.3s ease;
+  background-origin: border-box;
+  background-clip: border-box;
+}
+
+.animated-border::before {
+  content: '';
+  position: absolute;
+  inset: -3px; /* Ajusta a largura das bordas */
+  z-index: -1;
+  background: linear-gradient(90deg, #CAA6FF, #003DFF);
+  border-radius: 10px;
+  padding: 2px;
+  background-size: 200%;
+  background-position: 0% 0%;
+  transition: background-position 0.5s ease;
+}
+
+.animated-border:hover::before {
+  background-position: 100% 0%; /* Troca o gradiente ao passar o mouse */
+}
+
+.animated-border:active {
+  color: #CAA6FF; /* Altera a cor do texto ao ser pressionado */
+}
+
+
+.border-gradient {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden; /* Garantir que nada saia da borda ao redor do botão */
+  z-index: 1;
+  transition: color 0.5s ease, background-color 0.5s ease; /* Transição do texto e fundo */
+}
+
+.border-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  padding: 2px;
+  background: linear-gradient(90deg, #CAA6FF, #003DFF);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  animation: gradientAnimation 2s infinite linear; /* Continuação da animação */
+  z-index: -1; /* Fica atrás do conteúdo do botão */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Efeito de hover */
+.border-gradient:hover {
+  background: transparent; /* Mantém o fundo transparente */
+  color: white; /* Mantém a cor do texto ao passar o mouse */
+}
+
+.border-gradient:hover::before {
+  background: linear-gradient(90deg, #CAA6FF, #003DFF); /* Aplica o gradiente fixo no hover */
+  animation: none; /* Para a animação enquanto o botão está em hover */
+}
+
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;

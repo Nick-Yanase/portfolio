@@ -11,12 +11,12 @@ import { IconMenuDeep } from "@tabler/icons-react";
 
 export default function Header() {
   return (
-    <header className="w-full flex justify-center absolute drop-shadow-md ">
+    <header className="w-full flex justify-center fixed backdrop-blur-2xl bg-black/10  z-50">
       <nav className="flex items-center justify-between max-w-screen-2xl w-full p-5 gap-4 lg:gap-10">
         <Logotipo />
         <div className="flex justify-end items-center size-full gap-4 md:gap-6 lg:gap-10">
           <ListaNav className={"hidden md:flex text-sm md:text-base lg:gap-10"}/>
-          <span className="hidden md:flex h-full w-[2px] rounded-lg bg-zinc-400 transiti"></span>
+          <span className="hidden md:flex h-full w-[1.5px] rounded-lg bg-zinc-400 "></span>
           <Btn
             variant="primary"
             link="https://wa.me/5511955206286?text=Olá!%20Gostaria%20de%20conversar%20com%20você."
