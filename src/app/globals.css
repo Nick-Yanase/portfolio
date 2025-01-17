@@ -9,6 +9,60 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* TEXTO ANIMADO */
+.txt-animated span{
+  position: relative;
+}
+
+.txt-animated span::after{
+  content: "";
+  position: absolute;
+  height: 100%;
+  border-left: 2px solid #CAA6FF;
+  right: -10px;
+  animation:cursor .8s infinite, digitando 6s steps(300) infinite;
+  width: calc(100% + 15px); /* calcular para o cursor ficar atrás das palavras do span */
+  background-color: #120B24;
+}
+@keyframes cursor {
+  0%{
+     border-left: 2px solid #120B24;
+  }
+}
+@keyframes digitando {
+  10%, 12%, 15%, 21%, 26%, 30%, 35%, 41%, 46%, 50%, 55%, 61%, 70%, 75%, 81%, 86%, 90%, 95%{
+    width:0;   
+  }
+  5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85%{
+    width: calc(100% + 15)
+  }
+}
+.txt-animated span::before{
+  content: "";
+  color:#CAA6FF;
+  animation: txt-dinamico 30s infinite;  /*30 = 30 / 5 palavras => 6s para cada*/
+}
+@keyframes txt-dinamico {
+  0%, 20%{
+    content: "Possuo 19 anos e sou aluno da FATEC Zona leste.";
+  }
+
+  21%, 40%{
+    content: "Graduando em desenvolvimento de software.";
+  }
+
+  41%, 60%{
+    content: "Desenvolvedor Web focado em performance e design funcional.";
+  }
+  61%, 80%{
+    content: "Experiente em integrar criatividade e soluções digitais.";
+  }
+  81%, 100%{
+    content: "Conheça o profissional que sua empresa precisa!";
+  }
+}
+
 /*PRIMARY TAILWIND CONFIG*/
 .text-gradient-primary {
   background: linear-gradient(to right, #CAA6FF, #003DFF);
