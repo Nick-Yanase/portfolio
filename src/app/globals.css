@@ -10,11 +10,30 @@ html {
   scroll-behavior: smooth;
 }
 
+/*Borda dinâmica hover*/
+nav ul li{
+  position: relative;
+}
+nav ul li::after{
+  content: " ";
+  padding-bottom: 4px;
+  width: 0%;
+  height: 4px;
+  background: #6630FF;
+  position: absolute;
+  border-radius: 4px;
+  bottom: 0;
+  left: 0;
+  transition: 0.4s ease-in-out;
+}
+nav ul li:hover::after{
+  width: 100%;
+}
+
 /* TEXTO ANIMADO */
 .txt-animated span{
   position: relative;
 }
-
 .txt-animated span::after{
   content: "";
   position: absolute;
@@ -63,12 +82,24 @@ html {
   }
 }
 
+
+/*SCROLLBAR PERSONALIZADO*/
+::-webkit-scrollbar{
+  width:10px;
+  background: #120B24;
+}
+::-webkit-scrollbar-thumb{
+  height: 20px;
+  background: linear-gradient(to bottom, #CAA6FF, #003DFF);
+  border-radius: 8px;
+}
+
+
 /*PRIMARY TAILWIND CONFIG*/
 .text-gradient-primary {
   background: linear-gradient(to right, #CAA6FF, #003DFF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
 }
 
 /*SECONDARY TAILWIND CONFIG*/
