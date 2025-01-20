@@ -85,12 +85,14 @@ nav ul li:hover::after{
 
 /*SCROLLBAR PERSONALIZADO*/
 ::-webkit-scrollbar{
-  width:10px;
-  background: #120B24;
+  width:12px;
+  background: #18181b;
 }
 ::-webkit-scrollbar-thumb{
   height: 20px;
-  background: linear-gradient(to bottom, #CAA6FF, #003DFF);
+  width: 2px;
+  background: #6620FF;
+  border: solid 3px  #18181b;
   border-radius: 8px;
 }
 
