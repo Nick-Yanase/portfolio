@@ -82,6 +82,44 @@ nav ul li:hover::after{
   }
 }
 
+/* menu projetos*/
+.menu {
+      display: flex;
+      position: relative;
+      background-color: #1c1c1c;
+      border-radius: 8px;
+      overflow: hidden;
+      padding: 10px;
+    }
+
+    .menu-item {
+      position: relative;
+      padding: 10px 20px;
+      color: #ccc;
+      cursor: pointer;
+      z-index: 1;
+      transition: color 0.3s;
+    }
+
+    .menu-item:hover {
+      color: #fff;
+    }
+
+    .menu-item.active {
+      color: #fff;
+    }
+
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 33%;
+      background: linear-gradient(90deg, #6a00ff, #aa00ff);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      z-index: 0;
+    }
 
 /*SCROLLBAR PERSONALIZADO*/
 ::-webkit-scrollbar{
