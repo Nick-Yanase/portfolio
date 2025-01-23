@@ -85,16 +85,17 @@ nav ul li:hover::after{
 /* menu projetos*/
 .menu {
       display: flex;
+      gap:16px;
       position: relative;
-      background-color: #1c1c1c;
-      border-radius: 8px;
+      background-color: #18181b;
+      border-radius: 24px;
       overflow: hidden;
       padding: 10px;
     }
 
     .menu-item {
       position: relative;
-      padding: 10px 20px;
+      padding: 5px 30px;
       color: #ccc;
       cursor: pointer;
       z-index: 1;
@@ -115,10 +116,11 @@ nav ul li:hover::after{
       left: 0;
       height: 100%;
       width: 33%;
-      background: linear-gradient(90deg, #6a00ff, #aa00ff);
-      border-radius: 8px;
+      background: linear-gradient(to right, #CAA6FF, #6620FF);
+      border-radius: 24px;
       transition: all 0.3s ease;
       z-index: 0;
+      opacity: 0.8;
     }
 
 /*SCROLLBAR PERSONALIZADO*/

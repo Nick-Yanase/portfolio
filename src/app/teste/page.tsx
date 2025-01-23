@@ -1,53 +1,42 @@
 "use client";
-import { IconCube } from "@tabler/icons-react";
+import { IconCode, IconCube, IconDeviceDesktop, IconFileCode, IconFileCode2, IconHomeBitcoin, IconLayersDifference, IconLayout, IconMedal, IconPalette, IconSchool, IconUser, IconVectorTriangle } from "@tabler/icons-react";
+import { useEffect } from "react";
 
 export default function Menu() {
-  
-  return (
-    <div className="bg-black">
-        <IconCube
-  style={{ fill: "url(#iconGradient)" }}
-  className="w-8 h-8"
->
-  <defs>
-    <linearGradient id="iconGradient" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stopColor="#CAA6FF" />
-      <stop offset="100%" stopColor="#003DFF" />
-    </linearGradient>
-  </defs>
-</IconCube>
+  useEffect(() => {
+    let currentScroll = window.scrollY; // Posição atual do scroll
+    let isScrolling = false;
 
-<IconCube className="text-white"></IconCube>
-<IconCube
-  style={{ stroke: "url(#iconGradient)" }} // Aplica o gradiente às linhas (contornos)
-  className="w-8 h-8"
-  fill="none" // Nenhum preenchimento interno
-  strokeWidth="2" // Ajusta a largura das linhas (opcional)
->
-  <defs>
-    <linearGradient id="iconGradient" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stopColor="#CAA6FF" />
-      <stop offset="100%" stopColor="#003DFF" />
-    </linearGradient>
-  </defs>
-</IconCube>
+    const smoothScroll = () => {
+      if (!isScrolling) {
+        // Emulate inertia: ajusta a posição atual para se aproximar da posição real
+        currentScroll += (window.scrollY - currentScroll) * 0.1;
 
-<IconCube
-  style={{ stroke: "url(#iconGradient)" }}
-  className="w-8 h-8"
-  fill="none"
-  strokeWidth="2" // Controla a espessura da linha
-  strokeLinecap="round" // Para arestas arredondadas
-  strokeLinejoin="round" // Para cantos mais suaves
->
-  <defs>
-    <linearGradient id="iconGradient" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stopColor="#CAA6FF" />
-      <stop offset="100%" stopColor="#003DFF" />
-    </linearGradient>
-  </defs>
-</IconCube>
+        window.scrollTo(0, currentScroll);
 
-    </div>
-  );
+        if (Math.abs(window.scrollY - currentScroll) > 0.5) {
+          // Continua o loop enquanto houver diferença significativa
+          requestAnimationFrame(smoothScroll);
+        } else {
+          currentScroll = window.scrollY; // Ajusta caso a diferença seja mínima
+        }
+      }
+    };
+
+    const onWheel = () => {
+      if (!isScrolling) {
+        isScrolling = true;
+        requestAnimationFrame(() => {
+          smoothScroll();
+          isScrolling = false;
+        });
+      }
+    };
+
+    window.addEventListener("scroll", onWheel);
+
+    return () => window.removeEventListener("scroll", onWheel);
+  }, []);
+
+  return <div style={{ height: "200vh" }}>Rolar para testar a suavidade</div>;
 }

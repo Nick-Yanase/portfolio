@@ -2,13 +2,15 @@
 import Btn from "@/components/button";
 import Template from "@/components/layout/template";
 import TextGradient from "@/components/textGradient";
-import { IconCube, IconDownload, IconRocket } from "@tabler/icons-react";
+import { IconCubeSpark, IconDownload, IconTriangleFilled  } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import { useEffect, useRef, useState } from "react";
+import projetos from "./constants/projetos";
 export default function Home() {
 
+    /*funções para o menu de projetos funcionar*/ 
     const [activeIndex, setActiveIndex] = useState(0);
     const backgroundRef = useRef<HTMLDivElement>(null);
     const menuRef = useRef<HTMLDivElement>(null);
@@ -26,9 +28,26 @@ export default function Home() {
         }
       }
     }, [activeIndex]);
+    
+    /*funções para ao iniciar a aplicação os projetos animarem*/
+    const containerVariants = {
+      hidden: { opacity: 0, y: 20 },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          staggerChildren: 0.2, // Anima cada filho com atraso
+        },
+      },
+    };
+  
+    const itemVariants = {
+      hidden: { opacity: 0, y: 20 },
+      visible: { opacity: 1, y: 0 },
+    };
   return (
     <Template>
-      <section className="w-full bg-purple/10 flex justify-center pt-32 lg:pt-[96px] p-5 relative">
+      <section className="w-full bg-purple/10 flex justify-center pt-28 2xl:pt-[150px] p-5 relative">
         <div className="max-w-screen-xl w-full flex flex-col md:flex-row items-center md:gap-4 justify-between lg:py-10 z-20">
           <motion.article 
           initial={{ x:-100, opacity:0 }} 
@@ -175,51 +194,97 @@ export default function Home() {
 
           <Image src={"/images/blur-purple.svg"} alt="blur-purple" width={900} height={100} className="absolute -top-56 -right-96 z-10"/>
 
-          <Image src={"/images/blur-purple.svg"} alt="blur-purple" width={700} height={100} className="absolute -bottom-56 -left-[400px] z-10"/>
+          <Image src={"/images/blur-purple.svg"} alt="blur-purple" width={850} height={100} className="absolute -bottom-1/2 -left-[400px] z-10"/>
       </section>
+     
       <section className="w-full flex justify-center items-center my-12">
-        <article className="w-full max-w-screen-xl flex flex-col gap-4 ">
-          <TextGradient
-            primaryColor="#CAA6FF"
-            secondaryColor="#003DFF"
-            className="text-3xl font-bold flex"> 
-           
-            Projetos  
-          </TextGradient>
+        <article className="w-full max-w-screen-2xl justify-center flex flex-col gap-8 z-20 items-center">
+
+          <div className="titulo flex gap-2 items-center">
+          <IconCubeSpark
+            style={{ stroke: "url(#iconGradient)" }}
+            className="size-9"
+            fill="none"
+            strokeWidth="2" // Controla a espessura da linha
+            strokeLinecap="round" // Para arestas arredondadas
+            strokeLinejoin="round" // Para cantos mais suaves
+          >
+            <defs>
+              <linearGradient id="iconGradient" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="20%" stopColor="#CAA6FF" />
+                <stop offset="200%" stopColor="#003DFF" />
+              </linearGradient>
+            </defs>
+          </IconCubeSpark>
+            <TextGradient
+              primaryColor="#CAA6FF"
+              secondaryColor="#003DFF"
+              className="text-4xl font-bold flex gap-4">
+              Projetos
+            </TextGradient>
+          </div>
 
           <div ref={menuRef} className="menu">
-          <div ref={backgroundRef} className="background"></div>
-          <div
-            className={`menu-item ${activeIndex === 0 ? "active" : ""}`}
-            onClick={() => setActiveIndex(0)}
-          >
-            Todos
+            <div ref={backgroundRef} className="background"></div>
+            <div
+              className={`menu-item ${activeIndex === 0 ? "active" : ""}`}
+              onClick={() => setActiveIndex(0)}
+            >
+              Todos
+            </div>
+            <div
+              className={`menu-item ${activeIndex === 1 ? "active" : ""}`}
+              onClick={() => setActiveIndex(1)}
+            >
+              Softwares 
+            </div>
+            <div
+              className={`menu-item ${activeIndex === 2 ? "active" : ""}`}
+              onClick={() => setActiveIndex(2)}
+            >
+              UI & UX
+            </div>
           </div>
-          <div
-            className={`menu-item ${activeIndex === 1 ? "active" : ""}`}
-            onClick={() => setActiveIndex(1)}
-          >
-            UI & UX Design
-          </div>
-          <div
-            className={`menu-item ${activeIndex === 2 ? "active" : ""}`}
-            onClick={() => setActiveIndex(2)}
-          >
-            Softwares
-          </div>
-        </div>
 
         <article className="flex gap-3 text-zinc-500">
-            <div className={` ${activeIndex === 0 ? "flex" : "hidden "}`}>
-              <div>todos</div>
-              <div>todos</div>
-              <div>todos</div>
-            </div>
+          <AnimatePresence>
+            {activeIndex === 0 && (
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                variants={containerVariants}
+                className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 xl:gap-gap-6"
+              >
+                {projetos.map((projeto) => (
+                  <motion.div
+                    key={projeto.id}
+                    variants={itemVariants}
+                    transition={{ duration: 0.5 }}
+                    className="bg-zinc-900 rounded-xl flex flex-col w-[380px] p-6 items-center justify-center gap-3"
+                  >
+                    <div className="w-[340px] h-48 rounded-lg relative overflow-hidden">
+                      <Image src={projeto.image} alt="imagem projeto" fill />
+                    </div>
+                    <div className="flex flex-col gap-1">
+                      <h3 className="text-white font-semibold text-lg">
+                        {projeto.name}
+                      </h3>
+                      <p className="text-400">{projeto.desc}</p>
+                    </div>
+                    <div className="w-full flex justify-end">
+                      <IconTriangleFilled className="text-blue" />
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
             
             <div className={` ${activeIndex === 1 ? "flex" : "hidden "}`}>
-              <div>design</div>
-              <div>design</div>
-              <div>design</div>
+              <div className="bg-zinc-800 rounded-lg ">
+                
+              </div>
             </div>
             <div className={` ${activeIndex === 2 ? "flex" : "hidden "}`}>
               <div>softwares</div>
