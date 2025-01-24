@@ -12,7 +12,10 @@ const buttonVariants = tv({
         "border-violet-500 border-[3px] px-16 py-4 text-violet-400 hover:text-white hover:border-violet-500 hover:bg-violet-500 text-xl font-semibold rounded-2xl bg-transparent hidden md:flex",
       terciary:
         "border-violet-500 border-[3px] px-16 py-4 text-violet-400 hover:text-white hover:border-violet-500 hover:bg-violet-500 text-xl font-semibold rounded-2xl bg-transparent flex md:hidden",
+      quaternary: 
+        "bg-zinc-800 p-2 w-full rounded-2xl font-semibold transition-all border-violet-500 hover:border hover:text-violet-400 hover:bg-transparent"
     },
+      
   },
   defaultVariants: {
     variant: "primary",

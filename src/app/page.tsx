@@ -2,13 +2,19 @@
 import Btn from "@/components/button";
 import Template from "@/components/layout/template";
 import TextGradient from "@/components/textGradient";
-import { IconCubeSpark, IconDownload, IconTriangleFilled  } from "@tabler/icons-react";
+import { IconBrandFigma, IconBrandGithub, IconCubeSpark, IconDownload, IconTriangleFilled, IconWebhook  } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion"
 import { useEffect, useRef, useState } from "react";
 import projetos from "./constants/projetos";
 export default function Home() {
+
+    /*Função para o hover dos projetos acontecer */
+    const [isHover , setIsHover] = useState(false)
+     const addHover = () => {
+      setIsHover(true);
+     }
 
     /*funções para o menu de projetos funcionar*/ 
     const [activeIndex, setActiveIndex] = useState(0);
@@ -197,7 +203,7 @@ export default function Home() {
           <Image src={"/images/blur-purple.svg"} alt="blur-purple" width={850} height={100} className="absolute -bottom-1/2 -left-[400px] z-10"/>
       </section>
      
-      <section className="w-full flex justify-center items-center my-12">
+      <section className="w-full flex justify-center items-center my-12 relative">
         <article className="w-full max-w-screen-2xl justify-center flex flex-col gap-8 z-20 items-center">
 
           <div className="titulo flex gap-2 items-center">
@@ -246,8 +252,8 @@ export default function Home() {
             </div>
           </div>
 
-        <article className="flex gap-3 text-zinc-500">
-          <AnimatePresence>
+        <div className="flex gap-3 text-zinc-500">
+        <AnimatePresence>
             {activeIndex === 0 && (
               <motion.div
                 initial="hidden"
@@ -261,26 +267,72 @@ export default function Home() {
                     key={projeto.id}
                     variants={itemVariants}
                     transition={{ duration: 0.5 }}
-                    className="bg-zinc-900 rounded-xl flex flex-col w-[380px] p-6 items-center justify-center gap-3"
+                    className="bg-zinc-900 rounded-xl flex flex-col w-[380px] p-6 items-center justify-center gap-3 group relative shadow-lg"
                   >
+                    {/* Imagem do projeto */}
                     <div className="w-[340px] h-48 rounded-lg relative overflow-hidden">
                       <Image src={projeto.image} alt="imagem projeto" fill />
                     </div>
+
+                    {/* Conteúdo do projeto */}
                     <div className="flex flex-col gap-1">
-                      <h3 className="text-white font-semibold text-lg">
-                        {projeto.name}
-                      </h3>
+                      <h3 className="text-white font-semibold text-lg">{projeto.name}</h3>
                       <p className="text-400">{projeto.desc}</p>
                     </div>
+
+                    {/* Ícone padrão */}
                     <div className="w-full flex justify-end">
                       <IconTriangleFilled className="text-blue" />
+                    </div>
+
+                    {/* Efeito de hover e botões adicionais */}
+                    <div className="absolute inset-0 bg-zinc-900 bg-opacity-90 rounded-xl flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm ">
+                      <div className="flex flex-col justify-center items-center gap-4">
+                        {/* <Image src={projeto.logo} alt="logo" width={180} height={70}/> */}
+                        <div className="w-full flex justify-center text-lg text-zinc-300">
+                          <p>Visualizar o projeto:</p>
+                        </div>
+                        { 
+                          projeto.linkProjects[0] && (
+                            <Btn variant="quaternary">
+                            <a
+                            href="/"
+                            className="flex gap-1 items-center"
+                            >
+                              <p className="space-x-2">Figma</p> <IconBrandFigma />
+                            </a>
+                          </Btn>
+                        )}
+                        {/* Botão para GitHub */}
+                        { 
+                          projeto.linkProjects[1] && (
+                            <Btn variant="quaternary">
+                            <a
+                            href="/"
+                            className="flex gap-1 items-center"
+                            >
+                              <p className="space-x-2">Github</p> <IconBrandGithub />
+                            </a>
+                          </Btn>
+                        )}
+                        { 
+                          projeto.linkProjects[2] && (
+                            <Btn variant="quaternary">
+                            <a
+                            href="/"
+                            className="flex gap-1 items-center"
+                            >
+                              <p className="space-x-2">Executar</p> <IconWebhook />
+                            </a>
+                          </Btn>
+                        )}
+                      </div>
                     </div>
                   </motion.div>
                 ))}
               </motion.div>
             )}
           </AnimatePresence>
-            
             <div className={` ${activeIndex === 1 ? "flex" : "hidden "}`}>
               <div className="bg-zinc-800 rounded-lg ">
                 
@@ -291,10 +343,10 @@ export default function Home() {
               <div>softwares</div>
               <div>softwares</div>
             </div>
-          </article>
+          </div>
 
         </article>
-
+        <Image src={"/images/blur-purple.svg"} alt="blur-purple" width={800} height={100} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"/>
       </section>
 
     </Template>
