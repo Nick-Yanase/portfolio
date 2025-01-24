@@ -53,7 +53,7 @@ export default function Home() {
     };
   return (
     <Template>
-      <section className="w-full bg-purple/10 flex justify-center pt-28 2xl:pt-[150px] p-5 relative">
+      <section className="w-full bg-purple/10 flex justify-center pt-28 2xl:pt-[150px] p-5 relative z-20">
         <div className="max-w-screen-xl w-full flex flex-col md:flex-row items-center md:gap-4 justify-between lg:py-10 z-20">
           <motion.article 
           initial={{ x:-100, opacity:0 }} 
@@ -286,7 +286,7 @@ export default function Home() {
                     </div>
 
                     {/* Efeito de hover e botões adicionais */}
-                    <div className="absolute inset-0 bg-zinc-900 bg-opacity-90 rounded-xl flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm ">
+                    <div className="absolute inset-0 bg-zinc-900 bg-opacity-90 rounded-xl flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm border border-violet-500">
                       <div className="flex flex-col justify-center items-center gap-4">
                         {/* <Image src={projeto.logo} alt="logo" width={180} height={70}/> */}
                         <div className="w-full flex justify-center text-lg text-zinc-300">
@@ -347,6 +347,7 @@ export default function Home() {
 
         </article>
         <Image src={"/images/blur-purple.svg"} alt="blur-purple" width={800} height={100} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"/>
+        <Image src={"/images/squarePink.svg"} alt="quadrado rosa" width={900} height={800} className="absolute -right-44 top-1/2 opacity-20 transform -translate-y-1/2"/>
       </section>
 
     </Template>

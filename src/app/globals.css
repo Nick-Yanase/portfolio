@@ -116,7 +116,7 @@ nav ul li:hover::after{
       left: 0;
       height: 100%;
       width: 33%;
-      background: linear-gradient(to right, #CAA6FF, #6620FF);
+      background: linear-gradient(to right, #577FFF, #6620FF);
       border-radius: 24px;
       transition: all 0.3s ease;
       z-index: 0;
