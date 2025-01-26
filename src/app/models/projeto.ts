@@ -5,6 +5,6 @@ export default interface Projeto {
   image: string;
   logo: string;
   linkProjects: string[];
-  icon1: string;
-  icon2?: string;
+  software: string;
+  design: string;
 }

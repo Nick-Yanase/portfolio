@@ -7,7 +7,7 @@ import { IconBrandGmail, IconBrandInstagram, IconCell, IconDeviceMobile } from "
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-zinc-900 flex justify-center">
+    <footer className=" w-full bg-zinc-900 flex justify-center">
       <div className="w-full p-5 mt-10 mb-6 max-w-screen-2xl flex flex-col gap-14">
         <div className="w-full flex-col flex md:flex-row gap-12 md:gap-8 items-start justify-between">
           <div className="w-full md:w-2/4 flex flex-col gap-8">
@@ -97,7 +97,7 @@ export default function Footer() {
         <div className="w-full flex-col flex gap-8">
           <div className="w-full h-[3px] rounded-lg bg-zinc-500" />
           <div className="flex flex-col md:flex-row justify-center md:justify-between items-center text-sm text-zinc-400 ">
-            <p className="text-center">© Copyright 2024. Desenvolvido por Nicolas Yanase</p>
+            <p className="text-center">© Copyright 2025. Desenvolvido por Nicolas Yanase</p>
             <p className=" font-semibold flex gap-2 items-center">Feito com 
             <TextGradient 
                 primaryColor="#CAA6FF" 
