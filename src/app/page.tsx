@@ -281,312 +281,314 @@ export default function Home() {
           </div>
 
           <div className="flex gap-3 text-zinc-500">
-            <AnimatePresence>
-              {activeIndex === 0 && (
-                <motion.div
-                  initial="hidden"
-                  animate="visible"
-                  exit="hidden"
-                  variants={containerVariants}
-                  className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 xl:gap-gap-6"
-                >
-                  {projetos.map((projeto) => (
-                    <motion.div
-                      key={projeto.id}
-                      variants={itemVariants}
-                      transition={{ duration: 0.5 }}
-                      className="bg-zinc-900 rounded-xl flex flex-col w-[380px] p-6 items-center justify-center gap-4 group relative shadow-lg"
-                    >
+            {activeIndex === 0 && (
+              <motion.div
+                key={activeIndex}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                variants={containerVariants}
+                className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 xl:gap-gap-6"
+              >
+                {projetos.map((projeto) => (
+                  <motion.div
+                    key={projeto.id}
+                    variants={itemVariants}
+                    transition={{ duration: 0.5 }}
+                
+                    className="bg-zinc-900 rounded-xl flex flex-col w-[380px] p-6 items-center justify-center gap-4 group relative shadow-lg"
+                  >
+                    {/* Imagem do projeto */}
+                    <div className="w-[340px] h-52 rounded-lg relative overflow-hidden">
+                      <Image src={projeto.image} alt="imagem projeto" fill />
+                    </div>
+                    
+                    {/* Conteúdo do projeto */}
+                    <div className="flex flex-col gap-1">
+                      <h3 className="text-white  font-semibold text-lg">
+                        {projeto.name}
+                      </h3>
+                      <p className="text-400">{projeto.desc}</p>
+                    </div>
+
+                    <div className="w-full gap-2 flex items-end">
+                      <div className="flex-wrap flex w-[80%] gap-2">
+                        {projeto.stacks.map((stack) => (
+                          <>
+                          <div key={projeto.id} className="px-3 py-1 text-sm text-[#B67DFC] border-[#B67DFC] border rounded-lg">
+                            <p>{stack}</p>
+                          </div>
+                          </>
+                        ))}
+                      </div>
+                      {/* Ícone padrão */}
+                      <div className="w-[20%] flex gap-3 justify-end">
+                        {projeto.software && (
+                          <Image
+                            src={"images/software.svg"}
+                            alt="software icon"
+                            width={24}
+                            height={24}
+                          />
+                        )}
+                        {projeto.design && (
+                          <Image
+                            src={"images/design.svg"}
+                            alt="design icon"
+                            width={24}
+                            height={24}
+                          />
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Efeito de hover e botões adicionais */}
+                    <div className="absolute inset-0 bg-zinc-950 bg-opacity-85  rounded-xl flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm border border-violet-500">
+                      <div className="flex flex-col justify-center items-center gap-4">
+                        <div className="w-full flex justify-center text-lg text-zinc-300">
+                          <p>Visualizar o projeto:</p>
+                        </div>
+                        {projeto.linkProjects[0] && (
+                          <Btn link={projeto.linkProjects[0]} variant="quaternary">
+                            <span className="flex gap-1 items-center">
+                              <p className="space-x-2">Figma</p>
+                              <IconBrandFigma />
+                            </span>
+                          </Btn>
+                        )}
+                        {/* Botão para GitHub */}
+                        {projeto.linkProjects[1] && (
+                          <Btn link={projeto.linkProjects[1]} variant="quaternary">
+                            <span className="flex gap-1 items-center">
+                              <p className="space-x-2">Github</p>
+                              <IconBrandGithub />
+                            </span>
+                          </Btn>
+                        )}
+                        {projeto.linkProjects[2] && (
+                          <Btn link={projeto.linkProjects[2]} variant="quaternary">
+                            <span className="flex gap-1 items-center">
+                              <p className="space-x-2">Executar</p>
+                              <IconWebhook />
+                            </span>
+                          </Btn>
+                        )}
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
+
+            {/* mostra a categoria software */}
+            {activeIndex === 1 && (
+              <motion.div
+                key={activeIndex}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                variants={containerVariants}
+                className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 xl:gap-gap-6"
+              >
+                {projetos
+                  .filter((projeto) => projeto.software === "yes") // Filtra apenas projetos com software === "yes"
+                  .map(
+                    (
+                      projeto // Mapeia os projetos filtrados para o JSX
+                    ) => (
+                      <motion.div
+                        key={projeto.id}
+                        variants={itemVariants}
+                        transition={{ duration: 0.5 }}
+                        className="bg-zinc-900 rounded-xl flex flex-col w-[380px] p-6 items-center justify-center gap-4 group relative shadow-lg"
+                      >
                       {/* Imagem do projeto */}
-                      <div className="w-[340px] h-52 rounded-lg relative overflow-hidden">
-                        <Image src={projeto.image} alt="imagem projeto" fill />
-                      </div>
-                      
-                      {/* Conteúdo do projeto */}
-                      <div className="flex flex-col gap-1">
-                        <h3 className="text-white  font-semibold text-lg">
-                          {projeto.name}
-                        </h3>
-                        <p className="text-400">{projeto.desc}</p>
-                      </div>
+                    <div className="w-[340px] h-52 rounded-lg relative overflow-hidden">
+                      <Image src={projeto.image} alt="imagem projeto" fill />
+                    </div>
+                    
+                    {/* Conteúdo do projeto */}
+                    <div className="flex flex-col gap-1">
+                      <h3 className="text-white  font-semibold text-lg">
+                        {projeto.name}
+                      </h3>
+                      <p className="text-400">{projeto.desc}</p>
+                    </div>
 
-                      <div className="w-full gap-2 flex items-end">
-                        <div className="flex-wrap flex w-[80%] gap-2">
-                          {projeto.stacks.map((stack) => (
-                            <>
-                            <div className="px-3 py-1 text-sm text-[#B67DFC] border-[#B67DFC] border rounded-lg">
-                              <p>{stack}</p>
-                            </div>
-                            </>
-                          ))}
-                        </div>
-                        {/* Ícone padrão */}
-                        <div className="w-[20%] flex gap-3 justify-end">
-                          {projeto.software && (
-                            <Image
-                              src={"images/software.svg"}
-                              alt="software icon"
-                              width={24}
-                              height={24}
-                            />
-                          )}
-                          {projeto.design && (
-                            <Image
-                              src={"images/design.svg"}
-                              alt="design icon"
-                              width={24}
-                              height={24}
-                            />
-                          )}
-                        </div>
-                      </div>
-
-                      {/* Efeito de hover e botões adicionais */}
-                      <div className="absolute inset-0 bg-zinc-950 bg-opacity-85  rounded-xl flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm border border-violet-500">
-                        <div className="flex flex-col justify-center items-center gap-4">
-                          <div className="w-full flex justify-center text-lg text-zinc-300">
-                            <p>Visualizar o projeto:</p>
+                    <div className="w-full gap-2 flex items-end">
+                      <div className="flex-wrap flex w-[80%] gap-2">
+                        {projeto.stacks.map((stack) => (
+                          <>
+                          <div key={projeto.id} className="px-3 py-1 text-sm text-[#B67DFC] border-[#B67DFC] border rounded-lg">
+                            <p>{stack}</p>
                           </div>
-                          {projeto.linkProjects[0] && (
-                            <Btn link={projeto.linkProjects[0]} variant="quaternary">
-                              <span className="flex gap-1 items-center">
-                                <p className="space-x-2">Figma</p>
-                                <IconBrandFigma />
-                              </span>
-                            </Btn>
-                          )}
-                          {/* Botão para GitHub */}
-                          {projeto.linkProjects[1] && (
-                            <Btn link={projeto.linkProjects[1]} variant="quaternary">
-                              <span className="flex gap-1 items-center">
-                                <p className="space-x-2">Github</p>
-                                <IconBrandGithub />
-                              </span>
-                            </Btn>
-                          )}
-                          {projeto.linkProjects[2] && (
-                            <Btn link={projeto.linkProjects[2]} variant="quaternary">
-                              <span className="flex gap-1 items-center">
-                                <p className="space-x-2">Executar</p>
-                                <IconWebhook />
-                              </span>
-                            </Btn>
-                          )}
-                        </div>
+                          </>
+                        ))}
                       </div>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              )}
+                      {/* Ícone padrão */}
+                      <div className="w-[20%] flex gap-3 justify-end">
+                        {projeto.software && (
+                          <Image
+                            src={"images/software.svg"}
+                            alt="software icon"
+                            width={24}
+                            height={24}
+                          />
+                        )}
+                        {projeto.design && (
+                          <Image
+                            src={"images/design.svg"}
+                            alt="design icon"
+                            width={24}
+                            height={24}
+                          />
+                        )}
+                      </div>
+                    </div>
 
-              {/* mostra a categoria software */}
-              {activeIndex === 1 && (
-                <motion.div
-                  initial="hidden"
-                  animate="visible"
-                  exit="hidden"
-                  variants={containerVariants}
-                  className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 xl:gap-gap-6"
-                >
-                  {projetos
-                    .filter((projeto) => projeto.software === "yes") // Filtra apenas projetos com software === "yes"
-                    .map(
-                      (
-                        projeto // Mapeia os projetos filtrados para o JSX
-                      ) => (
-                        <motion.div
-                          key={projeto.id}
-                          variants={itemVariants}
-                          transition={{ duration: 0.5 }}
-                          className="bg-zinc-900 rounded-xl flex flex-col w-[380px] p-6 items-center justify-center gap-4 group relative shadow-lg"
-                        >
+                        {/* Efeito de hover e botões adicionais */}
+                        <div className="absolute inset-0 bg-zinc-950 bg-opacity-85 rounded-xl flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm border border-violet-500">
+                          <div className="flex flex-col justify-center items-center gap-4">
+                            <div className="w-full flex justify-center text-lg text-zinc-300">
+                              <p>Visualizar o projeto:</p>
+                            </div>
+                            {projeto.linkProjects[0] && (
+                              <Btn link={projeto.linkProjects[0]} variant="quaternary">
+                                <span className="flex gap-1 items-center">
+                                  <p className="space-x-2">Figma</p>
+                                  <IconBrandFigma />
+                                </span>
+                              </Btn>
+                            )}
+                            {/* Botão para GitHub */}
+                            {projeto.linkProjects[1] && (
+                              <Btn link={projeto.linkProjects[1]} variant="quaternary">
+                                <span className="flex gap-1 items-center">
+                                  <p className="space-x-2">Github</p>
+                                  <IconBrandGithub />
+                                </span>
+                              </Btn>
+                            )}
+                            {projeto.linkProjects[2] && (
+                              <Btn link={projeto.linkProjects[2]} variant="quaternary">
+                                <span className="flex gap-1 items-center">
+                                  <p className="space-x-2">Executar</p>
+                                  <IconWebhook />
+                                </span>
+                              </Btn>
+                            )}
+                          </div>
+                        </div>
+                      </motion.div>
+                    )
+                  )}
+              </motion.div>
+            )}
+
+              {/* mostra a categoria design */}
+              {activeIndex === 2 && (
+              <motion.div
+                key={activeIndex}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                variants={containerVariants}
+                className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 xl:gap-gap-6"
+              >
+                {projetos
+                  .filter((projeto) => projeto.design === "yes") // Filtra apenas projetos com software === "yes"
+                  .map(
+                    (
+                      projeto // Mapeia os projetos filtrados para o JSX
+                    ) => (
+                      <motion.div
+                        key={projeto.id}
+                        variants={itemVariants}
+                        transition={{ duration: 0.5 }}
+                        className="bg-zinc-900 rounded-xl flex flex-col w-[380px] p-6 items-center justify-center gap-4 group relative shadow-lg"
+                      >
                         {/* Imagem do projeto */}
-                      <div className="w-[340px] h-52 rounded-lg relative overflow-hidden">
-                        <Image src={projeto.image} alt="imagem projeto" fill />
-                      </div>
-                      
-                      {/* Conteúdo do projeto */}
-                      <div className="flex flex-col gap-1">
-                        <h3 className="text-white  font-semibold text-lg">
-                          {projeto.name}
-                        </h3>
-                        <p className="text-400">{projeto.desc}</p>
-                      </div>
+                    <div className="w-[340px] h-52 rounded-lg relative overflow-hidden">
+                      <Image src={projeto.image} alt="imagem projeto" fill />
+                    </div>
+                    
+                    {/* Conteúdo do projeto */}
+                    <div className="flex flex-col gap-1">
+                      <h3 className="text-white  font-semibold text-lg">
+                        {projeto.name}
+                      </h3>
+                      <p className="text-400">{projeto.desc}</p>
+                    </div>
 
-                      <div className="w-full gap-2 flex items-end">
-                        <div className="flex-wrap flex w-[80%] gap-2">
-                          {projeto.stacks.map((stack) => (
-                            <>
-                            <div className="px-3 py-1 text-sm text-[#B67DFC] border-[#B67DFC] border rounded-lg">
-                              <p>{stack}</p>
-                            </div>
-                            </>
-                          ))}
-                        </div>
-                        {/* Ícone padrão */}
-                        <div className="w-[20%] flex gap-3 justify-end">
-                          {projeto.software && (
-                            <Image
-                              src={"images/software.svg"}
-                              alt="software icon"
-                              width={24}
-                              height={24}
-                            />
-                          )}
-                          {projeto.design && (
-                            <Image
-                              src={"images/design.svg"}
-                              alt="design icon"
-                              width={24}
-                              height={24}
-                            />
-                          )}
-                        </div>
-                      </div>
-
-                          {/* Efeito de hover e botões adicionais */}
-                          <div className="absolute inset-0 bg-zinc-950 bg-opacity-85 rounded-xl flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm border border-violet-500">
-                            <div className="flex flex-col justify-center items-center gap-4">
-                              <div className="w-full flex justify-center text-lg text-zinc-300">
-                                <p>Visualizar o projeto:</p>
-                              </div>
-                              {projeto.linkProjects[0] && (
-                                <Btn link={projeto.linkProjects[0]} variant="quaternary">
-                                  <span className="flex gap-1 items-center">
-                                    <p className="space-x-2">Figma</p>
-                                    <IconBrandFigma />
-                                  </span>
-                                </Btn>
-                              )}
-                              {/* Botão para GitHub */}
-                              {projeto.linkProjects[1] && (
-                                <Btn link={projeto.linkProjects[1]} variant="quaternary">
-                                  <span className="flex gap-1 items-center">
-                                    <p className="space-x-2">Github</p>
-                                    <IconBrandGithub />
-                                  </span>
-                                </Btn>
-                              )}
-                              {projeto.linkProjects[2] && (
-                                <Btn link={projeto.linkProjects[2]} variant="quaternary">
-                                  <span className="flex gap-1 items-center">
-                                    <p className="space-x-2">Executar</p>
-                                    <IconWebhook />
-                                  </span>
-                                </Btn>
-                              )}
-                            </div>
+                    <div className="w-full gap-2 flex items-end">
+                      <div className="flex-wrap flex w-[80%] gap-2">
+                        {projeto.stacks.map((stack) => (
+                          <>
+                          <div key={projeto.id} className="px-3 py-1 text-sm text-[#B67DFC] border-[#B67DFC] border rounded-lg">
+                            <p>{stack}</p>
                           </div>
-                        </motion.div>
-                      )
-                    )}
-                </motion.div>
-              )}
-
-               {/* mostra a categoria design */}
-               {activeIndex === 2 && (
-                <motion.div
-                  initial="hidden"
-                  animate="visible"
-                  exit="hidden"
-                  variants={containerVariants}
-                  className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 xl:gap-gap-6"
-                >
-                  {projetos
-                    .filter((projeto) => projeto.design === "yes") // Filtra apenas projetos com software === "yes"
-                    .map(
-                      (
-                        projeto // Mapeia os projetos filtrados para o JSX
-                      ) => (
-                        <motion.div
-                          key={projeto.id}
-                          variants={itemVariants}
-                          transition={{ duration: 0.5 }}
-                          className="bg-zinc-900 rounded-xl flex flex-col w-[380px] p-6 items-center justify-center gap-4 group relative shadow-lg"
-                        >
-                          {/* Imagem do projeto */}
-                      <div className="w-[340px] h-52 rounded-lg relative overflow-hidden">
-                        <Image src={projeto.image} alt="imagem projeto" fill />
+                          </>
+                        ))}
                       </div>
-                      
-                      {/* Conteúdo do projeto */}
-                      <div className="flex flex-col gap-1">
-                        <h3 className="text-white  font-semibold text-lg">
-                          {projeto.name}
-                        </h3>
-                        <p className="text-400">{projeto.desc}</p>
-                      </div>
-
-                      <div className="w-full gap-2 flex items-end">
-                        <div className="flex-wrap flex w-[80%] gap-2">
-                          {projeto.stacks.map((stack) => (
-                            <>
-                            <div className="px-3 py-1 text-sm text-[#B67DFC] border-[#B67DFC] border rounded-lg">
-                              <p>{stack}</p>
-                            </div>
-                            </>
-                          ))}
+                      {/* Ícone padrão */}
+                      <div className="w-[20%] flex gap-3 justify-end">
+                        {projeto.software && (
+                          <Image
+                            src={"images/software.svg"}
+                            alt="software icon"
+                            width={24}
+                            height={24}
+                          />
+                        )}
+                        {projeto.design && (
+                          <Image
+                            src={"images/design.svg"}
+                            alt="design icon"
+                            width={24}
+                            height={24}
+                          />
+                        )}
                         </div>
-                        {/* Ícone padrão */}
-                        <div className="w-[20%] flex gap-3 justify-end">
-                          {projeto.software && (
-                            <Image
-                              src={"images/software.svg"}
-                              alt="software icon"
-                              width={24}
-                              height={24}
-                            />
-                          )}
-                          {projeto.design && (
-                            <Image
-                              src={"images/design.svg"}
-                              alt="design icon"
-                              width={24}
-                              height={24}
-                            />
-                          )}
+                      </div>
+                        {/* Efeito de hover e botões adicionais */}
+                        <div className="absolute inset-0 bg-zinc-950 bg-opacity-85 rounded-xl flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm border border-violet-500">
+                          <div className="flex flex-col justify-center items-center gap-4">
+                            <div className="w-full flex justify-center text-lg text-zinc-300">
+                              <p>Visualizar o projeto:</p>
+                            </div>
+                            {projeto.linkProjects[0] && (
+                              <Btn link={projeto.linkProjects[0]} variant="quaternary">
+                                <span className="flex gap-1 items-center">
+                                  <p className="space-x-2">Figma</p>
+                                  <IconBrandFigma />
+                                </span>
+                              </Btn>
+                            )}
+                            {/* Botão para GitHub */}
+                            {projeto.linkProjects[1] && (
+                              <Btn link={projeto.linkProjects[1]} variant="quaternary">
+                                <span className="flex gap-1 items-center">
+                                  <p className="space-x-2">Github</p>
+                                  <IconBrandGithub />
+                                </span>
+                              </Btn>
+                            )}
+                            {projeto.linkProjects[2] && (
+                              <Btn link={projeto.linkProjects[2]} variant="quaternary">
+                                <span className="flex gap-1 items-center">
+                                  <p className="space-x-2">Executar</p>
+                                  <IconWebhook />
+                                </span>
+                              </Btn>
+                            )}
                           </div>
                         </div>
-                          {/* Efeito de hover e botões adicionais */}
-                          <div className="absolute inset-0 bg-zinc-950 bg-opacity-85 rounded-xl flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm border border-violet-500">
-                            <div className="flex flex-col justify-center items-center gap-4">
-                              <div className="w-full flex justify-center text-lg text-zinc-300">
-                                <p>Visualizar o projeto:</p>
-                              </div>
-                              {projeto.linkProjects[0] && (
-                                <Btn link={projeto.linkProjects[0]} variant="quaternary">
-                                  <span className="flex gap-1 items-center">
-                                    <p className="space-x-2">Figma</p>
-                                    <IconBrandFigma />
-                                  </span>
-                                </Btn>
-                              )}
-                              {/* Botão para GitHub */}
-                              {projeto.linkProjects[1] && (
-                                <Btn link={projeto.linkProjects[1]} variant="quaternary">
-                                  <span className="flex gap-1 items-center">
-                                    <p className="space-x-2">Github</p>
-                                    <IconBrandGithub />
-                                  </span>
-                                </Btn>
-                              )}
-                              {projeto.linkProjects[2] && (
-                                <Btn link={projeto.linkProjects[2]} variant="quaternary">
-                                  <span className="flex gap-1 items-center">
-                                    <p className="space-x-2">Executar</p>
-                                    <IconWebhook />
-                                  </span>
-                                </Btn>
-                              )}
-                            </div>
-                          </div>
-                        </motion.div>
-                      )
-                    )}
-                </motion.div>
-              )}
-
-            </AnimatePresence>
+                      </motion.div>
+                    )
+                  )}
+              </motion.div>
+            )}
+            
           </div>
         </article>
         <Image
