@@ -16,6 +16,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import projetos from "./constants/projetos";
 export default function Home() {
+  
   /*Função para o hover dos projetos acontecer */
   const [isHover, setIsHover] = useState(false);
   const addHover = () => {
@@ -294,70 +295,81 @@ export default function Home() {
                       key={projeto.id}
                       variants={itemVariants}
                       transition={{ duration: 0.5 }}
-                      className="bg-zinc-900 rounded-xl flex flex-col w-[380px] p-6 items-center justify-center gap-3 group relative shadow-lg"
+                      className="bg-zinc-900 rounded-xl flex flex-col w-[380px] p-6 items-center justify-center gap-4 group relative shadow-lg"
                     >
                       {/* Imagem do projeto */}
                       <div className="w-[340px] h-52 rounded-lg relative overflow-hidden">
                         <Image src={projeto.image} alt="imagem projeto" fill />
                       </div>
-
+                      
                       {/* Conteúdo do projeto */}
                       <div className="flex flex-col gap-1">
-                        <h3 className="text-white font-semibold text-lg">
+                        <h3 className="text-white  font-semibold text-lg">
                           {projeto.name}
                         </h3>
                         <p className="text-400">{projeto.desc}</p>
                       </div>
 
-                      {/* Ícone padrão */}
-                      <div className="w-full flex gap-3 justify-end">
-                        {projeto.software && (
-                          <Image
-                            src={"images/software.svg"}
-                            alt="software icon"
-                            width={24}
-                            height={24}
-                          />
-                        )}
-                        {projeto.design && (
-                          <Image
-                            src={"images/design.svg"}
-                            alt="design icon"
-                            width={24}
-                            height={24}
-                          />
-                        )}
+                      <div className="w-full gap-2 flex items-end">
+                        <div className="flex-wrap flex w-[80%] gap-2">
+                          {projeto.stacks.map((stack) => (
+                            <>
+                            <div className="px-3 py-1 text-sm text-[#B67DFC] border-[#B67DFC] border rounded-lg">
+                              <p>{stack}</p>
+                            </div>
+                            </>
+                          ))}
+                        </div>
+                        {/* Ícone padrão */}
+                        <div className="w-[20%] flex gap-3 justify-end">
+                          {projeto.software && (
+                            <Image
+                              src={"images/software.svg"}
+                              alt="software icon"
+                              width={24}
+                              height={24}
+                            />
+                          )}
+                          {projeto.design && (
+                            <Image
+                              src={"images/design.svg"}
+                              alt="design icon"
+                              width={24}
+                              height={24}
+                            />
+                          )}
+                        </div>
                       </div>
 
                       {/* Efeito de hover e botões adicionais */}
-                      <div className="absolute inset-0 bg-zinc-900 bg-opacity-90 rounded-xl flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm border border-violet-500">
+                      <div className="absolute inset-0 bg-zinc-950 bg-opacity-85  rounded-xl flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm border border-violet-500">
                         <div className="flex flex-col justify-center items-center gap-4">
                           <div className="w-full flex justify-center text-lg text-zinc-300">
                             <p>Visualizar o projeto:</p>
                           </div>
                           {projeto.linkProjects[0] && (
-                            <Btn variant="quaternary">
-                              <a href="/" className="flex gap-1 items-center">
-                                <p className="space-x-2">Figma</p>{" "}
+                            <Btn link={projeto.linkProjects[0]} variant="quaternary">
+                              <span className="flex gap-1 items-center">
+                                <p className="space-x-2">Figma</p>
                                 <IconBrandFigma />
-                              </a>
+                              </span>
                             </Btn>
                           )}
                           {/* Botão para GitHub */}
                           {projeto.linkProjects[1] && (
-                            <Btn variant="quaternary">
-                              <a href="/" className="flex gap-1 items-center">
-                                <p className="space-x-2">Github</p>{" "}
+                            <Btn link={projeto.linkProjects[1]} variant="quaternary">
+                              <span className="flex gap-1 items-center">
+                                <p className="space-x-2">Github</p>
                                 <IconBrandGithub />
-                              </a>
+                              </span>
                             </Btn>
                           )}
                           {projeto.linkProjects[2] && (
-                            <Btn variant="quaternary">
-                              <a href="/" className="flex gap-1 items-center">
-                                <p className="space-x-2">Executar</p>{" "}
+                            <Btn link={projeto.linkProjects[2]} variant="quaternary">
+                              <span className="flex gap-1 items-center">
+                                <p className="space-x-2">Executar</p>
                                 <IconWebhook />
-                              </a>
+                              </span>
                             </Btn>
                           )}
                         </div>
@@ -367,7 +379,7 @@ export default function Home() {
                 </motion.div>
               )}
 
-              {/* mostra  que tem p0 software */}
+              {/* mostra a categoria software */}
               {activeIndex === 1 && (
                 <motion.div
                   initial="hidden"
@@ -386,82 +398,81 @@ export default function Home() {
                           key={projeto.id}
                           variants={itemVariants}
                           transition={{ duration: 0.5 }}
-                          className="bg-zinc-900 rounded-xl flex flex-col w-[380px] p-6 items-center justify-center gap-3 group relative shadow-lg"
+                          className="bg-zinc-900 rounded-xl flex flex-col w-[380px] p-6 items-center justify-center gap-4 group relative shadow-lg"
                         >
-                          {/* Imagem do projeto */}
-                          <div className="w-[340px] h-52 rounded-lg relative overflow-hidden">
+                        {/* Imagem do projeto */}
+                      <div className="w-[340px] h-52 rounded-lg relative overflow-hidden">
+                        <Image src={projeto.image} alt="imagem projeto" fill />
+                      </div>
+                      
+                      {/* Conteúdo do projeto */}
+                      <div className="flex flex-col gap-1">
+                        <h3 className="text-white  font-semibold text-lg">
+                          {projeto.name}
+                        </h3>
+                        <p className="text-400">{projeto.desc}</p>
+                      </div>
+
+                      <div className="w-full gap-2 flex items-end">
+                        <div className="flex-wrap flex w-[80%] gap-2">
+                          {projeto.stacks.map((stack) => (
+                            <>
+                            <div className="px-3 py-1 text-sm text-[#B67DFC] border-[#B67DFC] border rounded-lg">
+                              <p>{stack}</p>
+                            </div>
+                            </>
+                          ))}
+                        </div>
+                        {/* Ícone padrão */}
+                        <div className="w-[20%] flex gap-3 justify-end">
+                          {projeto.software && (
                             <Image
-                              src={projeto.image}
-                              alt="imagem projeto"
-                              fill
+                              src={"images/software.svg"}
+                              alt="software icon"
+                              width={24}
+                              height={24}
                             />
-                          </div>
-
-                          {/* Conteúdo do projeto */}
-                          <div className="flex flex-col gap-1">
-                            <h3 className="text-white font-semibold text-lg">
-                              {projeto.name}
-                            </h3>
-                            <p className="text-400">{projeto.desc}</p>
-                          </div>
-
-                          {/* Ícone padrão */}
-                          <div className="w-full flex gap-3 justify-end">
-                            {projeto.software && (
-                              <Image
-                                src={"images/software.svg"}
-                                alt="software icon"
-                                width={24}
-                                height={24}
-                              />
-                            )}
-                            {projeto.design && (
-                              <Image
-                                src={"images/design.svg"}
-                                alt="design icon"
-                                width={24}
-                                height={24}
-                              />
-                            )}
-                          </div>
+                          )}
+                          {projeto.design && (
+                            <Image
+                              src={"images/design.svg"}
+                              alt="design icon"
+                              width={24}
+                              height={24}
+                            />
+                          )}
+                        </div>
+                      </div>
 
                           {/* Efeito de hover e botões adicionais */}
-                          <div className="absolute inset-0 bg-zinc-900 bg-opacity-90 rounded-xl flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm border border-violet-500">
+                          <div className="absolute inset-0 bg-zinc-950 bg-opacity-85 rounded-xl flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm border border-violet-500">
                             <div className="flex flex-col justify-center items-center gap-4">
                               <div className="w-full flex justify-center text-lg text-zinc-300">
                                 <p>Visualizar o projeto:</p>
                               </div>
                               {projeto.linkProjects[0] && (
-                                <Btn variant="quaternary">
-                                  <a
-                                    href="/"
-                                    className="flex gap-1 items-center"
-                                  >
-                                    <p className="space-x-2">Figma</p>{" "}
+                                <Btn link={projeto.linkProjects[0]} variant="quaternary">
+                                  <span className="flex gap-1 items-center">
+                                    <p className="space-x-2">Figma</p>
                                     <IconBrandFigma />
-                                  </a>
+                                  </span>
                                 </Btn>
                               )}
+                              {/* Botão para GitHub */}
                               {projeto.linkProjects[1] && (
-                                <Btn variant="quaternary">
-                                  <a
-                                    href="/"
-                                    className="flex gap-1 items-center"
-                                  >
-                                    <p className="space-x-2">Github</p>{" "}
+                                <Btn link={projeto.linkProjects[1]} variant="quaternary">
+                                  <span className="flex gap-1 items-center">
+                                    <p className="space-x-2">Github</p>
                                     <IconBrandGithub />
-                                  </a>
+                                  </span>
                                 </Btn>
                               )}
                               {projeto.linkProjects[2] && (
-                                <Btn variant="quaternary">
-                                  <a
-                                    href="/"
-                                    className="flex gap-1 items-center"
-                                  >
-                                    <p className="space-x-2">Executar</p>{" "}
+                                <Btn link={projeto.linkProjects[2]} variant="quaternary">
+                                  <span className="flex gap-1 items-center">
+                                    <p className="space-x-2">Executar</p>
                                     <IconWebhook />
-                                  </a>
+                                  </span>
                                 </Btn>
                               )}
                             </div>
@@ -472,7 +483,7 @@ export default function Home() {
                 </motion.div>
               )}
 
-               {/* mostra  que tem p0 software */}
+               {/* mostra a categoria design */}
                {activeIndex === 2 && (
                 <motion.div
                   initial="hidden"
@@ -491,82 +502,80 @@ export default function Home() {
                           key={projeto.id}
                           variants={itemVariants}
                           transition={{ duration: 0.5 }}
-                          className="bg-zinc-900 rounded-xl flex flex-col w-[380px] p-6 items-center justify-center gap-3 group relative shadow-lg"
+                          className="bg-zinc-900 rounded-xl flex flex-col w-[380px] p-6 items-center justify-center gap-4 group relative shadow-lg"
                         >
                           {/* Imagem do projeto */}
-                          <div className="w-[340px] h-52 rounded-lg relative overflow-hidden">
+                      <div className="w-[340px] h-52 rounded-lg relative overflow-hidden">
+                        <Image src={projeto.image} alt="imagem projeto" fill />
+                      </div>
+                      
+                      {/* Conteúdo do projeto */}
+                      <div className="flex flex-col gap-1">
+                        <h3 className="text-white  font-semibold text-lg">
+                          {projeto.name}
+                        </h3>
+                        <p className="text-400">{projeto.desc}</p>
+                      </div>
+
+                      <div className="w-full gap-2 flex items-end">
+                        <div className="flex-wrap flex w-[80%] gap-2">
+                          {projeto.stacks.map((stack) => (
+                            <>
+                            <div className="px-3 py-1 text-sm text-[#B67DFC] border-[#B67DFC] border rounded-lg">
+                              <p>{stack}</p>
+                            </div>
+                            </>
+                          ))}
+                        </div>
+                        {/* Ícone padrão */}
+                        <div className="w-[20%] flex gap-3 justify-end">
+                          {projeto.software && (
                             <Image
-                              src={projeto.image}
-                              alt="imagem projeto"
-                              fill
+                              src={"images/software.svg"}
+                              alt="software icon"
+                              width={24}
+                              height={24}
                             />
+                          )}
+                          {projeto.design && (
+                            <Image
+                              src={"images/design.svg"}
+                              alt="design icon"
+                              width={24}
+                              height={24}
+                            />
+                          )}
                           </div>
-
-                          {/* Conteúdo do projeto */}
-                          <div className="flex flex-col gap-1">
-                            <h3 className="text-white font-semibold text-lg">
-                              {projeto.name}
-                            </h3>
-                            <p className="text-400">{projeto.desc}</p>
-                          </div>
-
-                          {/* Ícone padrão */}
-                          <div className="w-full flex gap-3 justify-end">
-                            {projeto.software && (
-                              <Image
-                                src={"images/software.svg"}
-                                alt="software icon"
-                                width={24}
-                                height={24}
-                              />
-                            )}
-                            {projeto.design && (
-                              <Image
-                                src={"images/design.svg"}
-                                alt="design icon"
-                                width={24}
-                                height={24}
-                              />
-                            )}
-                          </div>
-
+                        </div>
                           {/* Efeito de hover e botões adicionais */}
-                          <div className="absolute inset-0 bg-zinc-900 bg-opacity-90 rounded-xl flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm border border-violet-500">
+                          <div className="absolute inset-0 bg-zinc-950 bg-opacity-85 rounded-xl flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm border border-violet-500">
                             <div className="flex flex-col justify-center items-center gap-4">
                               <div className="w-full flex justify-center text-lg text-zinc-300">
                                 <p>Visualizar o projeto:</p>
                               </div>
                               {projeto.linkProjects[0] && (
-                                <Btn variant="quaternary">
-                                  <a
-                                    href="/"
-                                    className="flex gap-1 items-center"
-                                  >
-                                    <p className="space-x-2">Figma</p>{" "}
+                                <Btn link={projeto.linkProjects[0]} variant="quaternary">
+                                  <span className="flex gap-1 items-center">
+                                    <p className="space-x-2">Figma</p>
                                     <IconBrandFigma />
-                                  </a>
+                                  </span>
                                 </Btn>
                               )}
+                              {/* Botão para GitHub */}
                               {projeto.linkProjects[1] && (
-                                <Btn variant="quaternary">
-                                  <a
-                                    href="/"
-                                    className="flex gap-1 items-center"
-                                  >
-                                    <p className="space-x-2">Github</p>{" "}
+                                <Btn link={projeto.linkProjects[1]} variant="quaternary">
+                                  <span className="flex gap-1 items-center">
+                                    <p className="space-x-2">Github</p>
                                     <IconBrandGithub />
-                                  </a>
+                                  </span>
                                 </Btn>
                               )}
                               {projeto.linkProjects[2] && (
-                                <Btn variant="quaternary">
-                                  <a
-                                    href="/"
-                                    className="flex gap-1 items-center"
-                                  >
-                                    <p className="space-x-2">Executar</p>{" "}
+                                <Btn link={projeto.linkProjects[2]} variant="quaternary">
+                                  <span className="flex gap-1 items-center">
+                                    <p className="space-x-2">Executar</p>
                                     <IconWebhook />
-                                  </a>
+                                  </span>
                                 </Btn>
                               )}
                             </div>
@@ -589,12 +598,20 @@ export default function Home() {
         />
 
         <Image
-          src={"/images/squarePink.svg"}
+          src={"/images/LogoNY-gradient02.svg"}
           alt="quadrado rosa"
           width={900}
           height={800}
-          className="absolute -right-44 top-1/2 opacity-20 transform -translate-y-1/2"
+          className="absolute -right-44 top-1/2 opacity-15 transform -translate-y-1/2"
         />
+
+        <Image
+          src={"/images/blur-blue.svg"}
+          alt="quadrado rosa"
+          width={1000}
+          height={800}
+          className="absolute -right-1/2 -bottom-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        />  
       </section>
     </Template>
   );

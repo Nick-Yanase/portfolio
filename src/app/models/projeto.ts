@@ -3,7 +3,7 @@ export default interface Projeto {
   name: string;
   desc: string;
   image: string;
-  logo: string;
+  stacks: string[]
   linkProjects: string[];
   software: string;
   design: string;
