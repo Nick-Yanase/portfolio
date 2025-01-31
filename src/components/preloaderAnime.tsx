@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Logotipo from "./layout/logotipo";
 
 export default function PreloaderAnime(){
   return(

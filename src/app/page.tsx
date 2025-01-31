@@ -7,12 +7,11 @@ import {
   IconBrandGithub,
   IconCubeSpark,
   IconDownload,
-  IconTriangleFilled,
   IconWebhook,
 } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import projetos from "./constants/projetos";
 export default function Home() {
@@ -313,12 +312,10 @@ export default function Home() {
 
                     <div className="w-full gap-2 flex items-end">
                       <div className="flex-wrap flex w-[80%] gap-2">
-                        {projeto.stacks.map((stack) => (
-                          <>
-                          <div key={projeto.id} className="px-3 py-1 text-sm text-[#B67DFC] border-[#B67DFC] border rounded-lg">
+                        {projeto.stacks.map((stack, index) => (
+                          <div key={index} className="px-3 py-1 text-sm text-[#B67DFC] border-[#B67DFC] border rounded-lg">
                             <p>{stack}</p>
                           </div>
-                          </>
                         ))}
                       </div>
                       {/* Ícone padrão */}
@@ -417,12 +414,10 @@ export default function Home() {
 
                     <div className="w-full gap-2 flex items-end">
                       <div className="flex-wrap flex w-[80%] gap-2">
-                        {projeto.stacks.map((stack) => (
-                          <>
-                          <div key={projeto.id} className="px-3 py-1 text-sm text-[#B67DFC] border-[#B67DFC] border rounded-lg">
+                        {projeto.stacks.map((stack, index) => (
+                          <div key={index} className="px-3 py-1 text-sm text-[#B67DFC] border-[#B67DFC] border rounded-lg">
                             <p>{stack}</p>
                           </div>
-                          </>
                         ))}
                       </div>
                       {/* Ícone padrão */}
@@ -522,12 +517,10 @@ export default function Home() {
 
                     <div className="w-full gap-2 flex items-end">
                       <div className="flex-wrap flex w-[80%] gap-2">
-                        {projeto.stacks.map((stack) => (
-                          <>
-                          <div key={projeto.id} className="px-3 py-1 text-sm text-[#B67DFC] border-[#B67DFC] border rounded-lg">
+                        {projeto.stacks.map((stack, index) => (
+                          <div key={index} className="px-3 py-1 text-sm text-[#B67DFC] border-[#B67DFC] border rounded-lg">
                             <p>{stack}</p>
                           </div>
-                          </>
                         ))}
                       </div>
                       {/* Ícone padrão */}

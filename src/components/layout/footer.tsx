@@ -3,7 +3,7 @@ import Logotipo from "./logotipo";
 import Link from "next/link";
 import ListaNav from "./listaNav";
 import TextGradient from "../textGradient";
-import { IconBrandGmail, IconBrandInstagram, IconCell, IconDeviceMobile } from "@tabler/icons-react";
+import { IconBrandGmail, IconBrandInstagram,IconDeviceMobile } from "@tabler/icons-react";
 
 export default function Footer() {
   return (

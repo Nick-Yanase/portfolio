@@ -1,4 +1,4 @@
-import { IconCode, IconCube, IconHome, IconMeat, IconMedal, IconMedal2, IconProgress, IconStretching, IconTools, IconToolsOff, IconTooltip, IconUser} from "@tabler/icons-react";
+import { IconCode, IconCube, IconHome, IconMedal, IconUser} from "@tabler/icons-react";
 import Link from "next/link";
 
 export interface listaNavProps{
