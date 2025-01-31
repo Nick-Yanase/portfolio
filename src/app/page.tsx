@@ -53,7 +53,7 @@ export default function Home() {
   };
   return (
     <Template>
-      <section className="w-full bg-purple/10 flex justify-center pt-28 2xl:pt-[150px] p-5 relative z-10">
+      <section className="w-full bg-violet-700/10 flex justify-center pt-28 2xl:pt-[150px] p-5 relative z-10">
         <div className="max-w-screen-xl w-full flex flex-col md:flex-row items-center md:gap-4 justify-between lg:py-10 z-20">
           <motion.article
             initial={{ x: -100, opacity: 0 }}
