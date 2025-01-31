@@ -1,5 +1,4 @@
 "use client";
-import { IconCode, IconCube, IconDeviceDesktop, IconFileCode, IconFileCode2, IconHomeBitcoin, IconLayersDifference, IconLayout, IconMedal, IconPalette, IconSchool, IconUser, IconVectorTriangle } from "@tabler/icons-react";
 import { useEffect } from "react";
 
 export default function Menu() {

@@ -2,7 +2,7 @@ import { IconCode, IconCube, IconHome, IconMedal, IconUser} from "@tabler/icons-
 import Link from "next/link";
 
 export interface listaNavProps{
-  className?: String;
+  className?: string;
 }
 export default function ListaNav(props: listaNavProps) {
   return(

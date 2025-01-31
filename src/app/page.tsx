@@ -15,12 +15,6 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import projetos from "./constants/projetos";
 export default function Home() {
-  
-  /*Função para o hover dos projetos acontecer */
-  const [isHover, setIsHover] = useState(false);
-  const addHover = () => {
-    setIsHover(true);
-  };
 
   /*funções para o menu de projetos funcionar*/
   const [activeIndex, setActiveIndex] = useState(0);
