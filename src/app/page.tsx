@@ -53,7 +53,7 @@ export default function Home() {
   };
   return (
     <Template>
-      <section className="w-full bg-violet-700/10 flex justify-center pt-28 2xl:pt-[150px] p-5 relative z-10">
+      <section className="w-full bg-violet-700/10 flex justify-center pt-28 2xl:pt-[150px] p-5 relative z-10 overflow-hidden">
         <div className="max-w-screen-xl w-full flex flex-col md:flex-row items-center md:gap-4 justify-between lg:py-10 z-20">
           <motion.article
             initial={{ x: -100, opacity: 0 }}
@@ -212,7 +212,7 @@ export default function Home() {
           alt="blur-purple"
           width={900}
           height={100}
-          className="absolute -top-56 -right-96 z-10"
+          className="absolute top-0 md:-top-56 md:-right-[350px] z-10"
         />
 
         <Image
@@ -220,7 +220,7 @@ export default function Home() {
           alt="blur-purple"
           width={850}
           height={100}
-          className="absolute -bottom-1/2 -left-[400px] z-10"
+          className="absolute -bottom-32 md:-bottom-1/2 md:-left-[400px] z-10"
         />
       </section>
 
@@ -289,10 +289,10 @@ export default function Home() {
                     variants={itemVariants}
                     transition={{ duration: 0.5 }}
                 
-                    className="bg-zinc-900 rounded-xl flex flex-col w-[380px] p-6 items-center justify-center gap-4 group relative shadow-lg"
+                    className="bg-zinc-900 rounded-xl flex flex-col w-[340px] md:w-[380px] p-6 items-center justify-center gap-4 group relative shadow-lg"
                   >
                     {/* Imagem do projeto */}
-                    <div className="w-[340px] h-52 rounded-lg relative overflow-hidden">
+                    <div className="w-[300px] md:w-[340px] h-44 md:h-52 rounded-lg relative overflow-hidden">
                       <Image src={projeto.image} alt="imagem projeto" fill />
                     </div>
                     
@@ -584,6 +584,14 @@ export default function Home() {
           width={800}
           height={100}
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        />
+
+        <Image
+          src={"/images/blur-purple.svg"}
+          alt="blur-purple"
+          width={850}
+          height={100}
+          className="absolute transform -top-1/5 left-0 "
         />
 
         <Image
