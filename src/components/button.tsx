@@ -3,7 +3,7 @@ import { ComponentProps } from "react";
 import { tv, VariantProps } from "tailwind-variants";
 
 const buttonVariants = tv({
-  base: "px-5 lg:px-10 py-4 text-white font-semibold rounded-2xl transition-all duration-500 flex items-center justify-center gap-2",
+  base: "px-5 lg:px-10 py-3 md:py-4 text-white text-sm md:text-base font-semibold rounded-2xl transition-all duration-500 flex items-center justify-center gap-2",
   variants: {
     variant: {
       primary:
