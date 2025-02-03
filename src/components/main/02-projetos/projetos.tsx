@@ -61,7 +61,7 @@ export default function Projetos() {
             <defs>
               <linearGradient id="iconGradient" x1="0" x2="1" y1="0" y2="1">
                 <stop offset="20%" stopColor="#CAA6FF" />
-                <stop offset="200%" stopColor="#003DFF" />
+                <stop offset="100%" stopColor="#5C6DFF" />
               </linearGradient>
             </defs>
           </IconCubeSpark>

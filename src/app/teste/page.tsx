@@ -1,4 +1,5 @@
 "use client";
+import { IconUserCircle, IconUserCode, IconUserCog, IconUserHexagon, IconUserSquareRounded } from "@tabler/icons-react";
 import { useEffect } from "react";
 
 export default function Menu() {
@@ -37,5 +38,11 @@ export default function Menu() {
     return () => window.removeEventListener("scroll", onWheel);
   }, []);
 
-  return <div style={{ height: "200vh" }}>Rolar para testar a suavidade</div>;
+  return <div style={{ height: "200vh" }}>Rolar para testar a suavidade
+  <IconUserCircle/>
+  <IconUserHexagon/>
+  <IconUserCode/>
+  <IconUserCog/>
+  <IconUserSquareRounded/>
+  </div>;
 }

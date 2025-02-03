@@ -34,6 +34,11 @@ export default function Header() {
                     Menu
                   </p>
                 </div>
+                <div className=" hidden bg-gradient-to-r from-[#567EFF] to-[#6620FF] bg-[length:160%_100%] bg-clip-text text-transparent w-fit">
+                  <p className="text-4xl font-bold">
+                    Menu
+                  </p>
+                </div>
                 
                 <ListaNav className={"flex-col pt-4"}/>
                 </SheetHeader>
