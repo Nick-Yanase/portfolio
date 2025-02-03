@@ -10,7 +10,7 @@ export interface templateProps {
 }
 
 export default function Template(props: templateProps) {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {

@@ -1,4 +1,5 @@
 import Btn from "@/components/button";
+import SocialMedia from "@/components/socialMedia";
 import TextGradient from "@/components/textGradient";
 import { IconDownload } from "@tabler/icons-react";
 import { motion } from "framer-motion";
@@ -38,47 +39,7 @@ export default function Info() {
         <span></span>
       </div>
       <div className="flex flex-col lg:flex-row lg:items-center gap-8 justify-between mt-6">
-        <div className="hidden md:flex justify-center gap-14 lg:justify-between items-center lg:gap-4 xl:gap-8">
-          <Link href="mailto:nicolasyanase18@gmail.com">
-            <div
-              className="size-12 rounded-full border-[1px] border-purple flex items-center justify-center transition-transform transform hover:scale-110 duration-300
-              "
-            >
-              <Image
-                src={"../../../images/icon-gmail.svg"}
-                alt="icon gmail"
-                width={30}
-                height={30}
-              />
-            </div>
-          </Link>
-          <Link href="https://github.com/Nick-Yanase">
-            <div
-              className="size-12 rounded-full border-[1px] border-purple flex items-center justify-center transition-transform transform hover:scale-110 duration-300
-              "
-            >
-              <Image
-                src={"../../../images/icon-github.svg"}
-                alt="icon github"
-                width={30}
-                height={30}
-              />
-            </div>
-          </Link>
-          <Link href="https://www.linkedin.com/in/nicolas-yanase/">
-            <div
-              className="size-12 rounded-full border-[1px] border-purple flex items-center justify-center transition-transform transform hover:scale-110 duration-300
-              "
-            >
-              <Image
-                src={"../../../images/icon-linkedin.svg"}
-                alt="icon gmail"
-                width={29}
-                height={29}
-              />
-            </div>
-          </Link>
-        </div>
+        <SocialMedia className="hidden md:flex justify-center gap-14 lg:justify-between items-center lg:gap-4 xl:gap-8 z-20 "/>
         <span className="hidden lg:flex lg:w-14 xl:w-20 h-[2px] rounded-lg bg-zinc-500" />
         <Btn variant="secondary">
           <a
