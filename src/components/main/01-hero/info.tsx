@@ -3,8 +3,6 @@ import SocialMedia from "@/components/socialMedia";
 import TextGradient from "@/components/textGradient";
 import { IconDownload } from "@tabler/icons-react";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
 export default function Info() {
   return (
     <motion.article

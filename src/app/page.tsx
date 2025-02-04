@@ -5,13 +5,10 @@ import Projetos from "@/components/main/02-projetos/projetos";
 import TextGradient from "@/components/textGradient";
 import {
   IconTriangleInvertedFilled,
-  IconUser,
-  IconUserBolt,
   IconUserSquareRounded,
 } from "@tabler/icons-react";
 import Image from "next/image";
 import skills from "./constants/skills";
-import { div } from "framer-motion/client";
 import BlurPurple from "@/components/blurPurple";
 import BlurBlue from "@/components/blurBlue";
 import SocialMedia from "@/components/socialMedia";
