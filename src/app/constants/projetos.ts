@@ -76,7 +76,7 @@ const projetos: Projeto[] = [
     name: "Surya Nursing Home",
     desc: "Design de uma aplicação para agendamento presencial com médicos, simplificando consultas com interface moderna e prática.",
     image: "/images/projects/surya-nursing.png",
-    stacks: ["figma"],
+    stacks: ["Figma"],
     linkProjects: ["https://www.figma.com/design/0qPZJmHnr0cRc6zb57muQL/Surya-Nurshing-Home?node-id=0-1&t=Z7ceV9FSZVvdSTEI-1", "", ""],
     software: "",
     design: "yes",

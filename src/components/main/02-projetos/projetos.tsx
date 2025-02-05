@@ -3,6 +3,7 @@ import Image from "next/image";
 import {
   IconCubeSpark,
 } from "@tabler/icons-react";
+import { motion } from "framer-motion"
 import { useEffect, useRef, useState } from "react";
 
 import TextGradient from "@/components/textGradient";
@@ -15,6 +16,8 @@ export default function Projetos() {
   const [activeIndex, setActiveIndex] = useState(0);
   const backgroundRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
+
+  const sectionRef = useRef(null);
 
   useEffect(() => {
     const items = menuRef.current?.querySelectorAll(".menu-item");
@@ -47,7 +50,7 @@ export default function Projetos() {
     visible: { opacity: 1, y: 0 },
   };
   return (
-    <section className="w-full flex justify-center items-center py-12 relative overflow-hidden">
+    <motion.section ref={sectionRef} className="w-full flex justify-center items-center py-12 relative overflow-hidden">
       <article className="w-full max-w-screen-2xl justify-center flex flex-col gap-8 z-20 items-center">
         <div className="titulo flex gap-2 items-center">
           <IconCubeSpark
@@ -98,6 +101,7 @@ export default function Projetos() {
 
         {/* Mostra todos os projetos  */}
         <ProjectsColumns
+          ref={sectionRef}
           activeIndex={activeIndex}
           containerVariants={containerVariants}
           itemVariants={itemVariants}
@@ -126,6 +130,6 @@ export default function Projetos() {
         height={800}
         className="absolute -right-44 top-1/2 opacity-15 transform -translate-y-1/2"
       />
-    </section>
+    </motion.section>
   );
 }

@@ -7,18 +7,47 @@ import {
   IconTriangleInvertedFilled,
   IconUserSquareRounded,
 } from "@tabler/icons-react";
+import { motion } from "framer-motion"
 import Image from "next/image";
 import skills from "./constants/skills";
 import BlurPurple from "@/components/blurPurple";
 import BlurBlue from "@/components/blurBlue";
 import SocialMedia from "@/components/socialMedia";
+import { useEffect, useRef, useState } from "react";
 export default function Home() {
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+
+  // Função para atualizar a posição do cursor
+  const updateCursorPosition = (e: MouseEvent) => {
+    setCursorPosition({
+      x: e.clientX,
+      y: e.clientY
+    });
+  };
+
+  // Adicionar e remover event listeners
+  useEffect(() => {
+    window.addEventListener('mousemove', updateCursorPosition);
+
+    return () => {
+      window.removeEventListener('mousemove', updateCursorPosition);
+    };
+  }, []);
+
+  const sectionRef = useRef(null); //referencio a section para que a animação so ocorra quando chegar nessa section
+
+
   return (
     <Template>
+      
       <Hero />
       <Projetos />
 
-      <section className="w-full bg-purple/10 flex gap-8 justify-center items-center relative px-5 pt-12 pb-20 z-10 overflow-hidden">
+      <motion.section 
+        viewport={{once: true }} //não deixa a animação ocorrer novamente
+        ref={sectionRef} //section refereciada para ocorrer a animação
+        className="w-full bg-purple/15 flex gap-8 justify-center items-center relative px-5 pt-12 pb-20 z-10 overflow-hidden"
+        >
         <div className="w-full max-w-screen-xl flex flex-col items-center gap-10">
          
           <div className="titulo flex gap-2 items-center">
@@ -47,9 +76,15 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col md:flex-row justify-between gap-12 items-start">
-            <article className="w-full  md:w-4/12 flex flex-col gap-4">
+            <article className="w-full md:w-4/12 flex flex-col gap-4 z-20">
               
-              <div className="flex gap-3 items-center justify-start px-10 lg:0">
+              <motion.div 
+                initial={{ x: -100, opacity: 0 }}
+                whileInView={{x: 0, opacity: 1 }}
+                transition={{ duration: 1.5 }}
+                viewport={{root: sectionRef, once: true}} //referencia da section ao animar e "once: true" para animar apenas uma vez
+                className="flex gap-3 items-center justify-start  sm:px-10 md:px-0"
+              >
                 <div className="relative rounded-full size-24">
                   <Image
                     src={"/images/Perfil-photo.svg"}
@@ -64,9 +99,15 @@ export default function Home() {
                   </p>
                   <p className="font-medium text-zinc-400">(11) 96620 - 6286</p>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="text-zinc-300 flex flex-col gap-4 sm:px-10 md:p-0 items-start">
+              <motion.div 
+                initial={{ x: -100, opacity: 0 }}
+                whileInView={{x: 0, opacity: 1 }}
+                transition={{ duration: 1.8 }}
+                viewport={{root: sectionRef, once: true}}
+                className="text-zinc-300 flex flex-col gap-4 sm:px-10 md:p-0 items-start"
+              >
                 <p>
                   Desenvolvedor de software e designer com experiência na
                   criação de aplicações usando tecnologias modernas como React,
@@ -78,7 +119,7 @@ export default function Home() {
                   melhores ferramentas e práticas do mercado. 🚀
                 </p>
                 <SocialMedia className="flex mx-auto md:mx-0 md:text-start justify-center lg:justify-between items-center gap-10 z-20 md:mt-4"/>
-              </div>
+              </motion.div>
             </article>
 
             <article className="w-full md:w-8/12 flex flex-col gap-8 md:gap-4 items-center md:items-end">
@@ -110,7 +151,14 @@ export default function Home() {
 
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-16 md:gap-8 justify-end">
                 {skills.map((skill) => (
-                  <div key={skill.id} className="flex flex-col items-center z-20">
+                  <motion.div 
+                    key={skill.id} 
+                    initial={{ x: 100, opacity: 0.5 }}
+                    whileInView={{x: 0, opacity: 1 }}
+                    transition={{ duration: 1.5 }}
+                    viewport={{root: sectionRef, once: true}}
+                    className="flex flex-col items-center z-20"
+                  >
                     <div className="w-28 h-32 bg-purple-dark rounded-lg flex items-center justify-center relative group">
                       <div className="size-16 relative">
                         <Image src={skill.image} alt={skill.name} fill/>
@@ -125,14 +173,14 @@ export default function Home() {
                     </div>  
                     
                     <p className="text-[#9030FF] mt-1">{skill.name}</p>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </article>
           </div>
         </div>
          <BlurBlue 
-            className="absolute -left-[300px] top-[10px]"
+            className="absolute -left-[200px] md:-left-[300px] top-[10px]"
             width={700} 
             height={100}
           />
@@ -141,7 +189,12 @@ export default function Home() {
               width={900} 
               height={100}
             />
-      </section>
+           <BlurPurple 
+              className="md:hidden absolute -bottom-[250px] left-1/2 transform -translate-x-1/2 "
+              width={900} 
+              height={100}
+            />
+      </motion.section>
     </Template>
   );
 }

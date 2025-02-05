@@ -10,14 +10,14 @@ export interface templateProps {
 }
 
 export default function Template(props: templateProps) {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false); // Oculta o Preloader
       setTimeout(() => setShowContent(true), 500); // Mostra o conteúdo após a transição
-    }, 1800); // Simula um carregamento de 2 segundos
+    }, 20); // Simula um carregamento de 2 segundos
     return () => clearTimeout(timer);
   }, []);
 

@@ -9,7 +9,7 @@ export default function Hero() {
         <ImageMe />
       </div>
       <BlurPurple
-        className="absolute top-0 md:-top-56 md:-right-[350px] z-10"
+        className="absolute top-0 sm:-top-52 md:-top-56 md:-right-[350px] z-10"
         width={900}
         height={100}
       />

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Projeto from "@/app/models/projeto";
 import Btn from "@/components/button";
 import { IconBrandFigma, IconBrandGithub, IconWebhook } from "@tabler/icons-react";
+import { RefObject } from "react";
 
 export interface projectsColumnsProps{
   projetos: Projeto[]
@@ -19,9 +20,10 @@ export interface projectsColumnsProps{
     hidden: { opacity: number; y: number };
     visible: { opacity: number; y: number };
   };
+  ref: RefObject<null>;
 }
 export default function ProjectsColumns(props: projectsColumnsProps){
-  const {activeIndex, itemVariants, containerVariants, projetos } = props
+  const {activeIndex, itemVariants, containerVariants, projetos, ref } = props
   return(
     
     <div className="flex gap-3 text-zinc-500">
@@ -32,6 +34,9 @@ export default function ProjectsColumns(props: projectsColumnsProps){
           animate="visible"
           exit="hidden"
           variants={containerVariants}
+          whileInView={{x: 0, opacity: 1 }}
+          transition={{ duration: 1.3 }}
+          viewport={{root: ref}}
           className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 xl:gap-gap-6"
         >
           {projetos.map((projeto) => (
