@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Footer from "./footer";
 import Header from "./header";
 import PreloaderAnime from "../preloaderAnime";
+import { Toaster } from "@/components/ui/sonner"
 
 export interface templateProps {
   children: React.ReactNode;
@@ -49,6 +50,7 @@ export default function Template(props: templateProps) {
           >
             {props.children}
           </main>
+          <Toaster />
           <Footer />
         </div>
       )}

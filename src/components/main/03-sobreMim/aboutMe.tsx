@@ -6,6 +6,7 @@ import BlurBlue from "@/components/blurBlue";
 import { useRef } from "react";
 import TechSkills from "./techSkills";
 import InfoMe from "./infoMe";
+import Image from "next/image";
 
 export default function AboutMe() {
   const sectionRef = useRef(null); //referencio a section para que a animação so ocorra quando chegar nessa section
@@ -13,7 +14,7 @@ export default function AboutMe() {
     <motion.section
       viewport={{ once: true }} //não deixa a animação ocorrer novamente
       ref={sectionRef} //section refereciada para ocorrer a animação
-      className="w-full bg-purple/15 flex gap-8 justify-center items-center relative px-5 pt-12 pb-20 z-10 overflow-hidden"
+      className="w-full bg-purple/[13%] flex gap-8 justify-center items-center relative px-5 pt-12 pb-20 z-10 overflow-hidden"
     >
       <div className="w-full max-w-screen-xl flex flex-col items-center gap-10">
         <div className="titulo flex gap-2 items-center">
@@ -63,6 +64,7 @@ export default function AboutMe() {
         width={900}
         height={100}
       />
+
     </motion.section>
   );
 }

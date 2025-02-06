@@ -1,6 +1,8 @@
 import Btn from "@/components/button";
 import SocialMedia from "@/components/socialMedia";
 import TextGradient from "@/components/textGradient";
+import { Toast } from "@/components/toast";
+import { Toaster } from "@/components/ui/sonner";
 import { IconDownload } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 export default function Info() {
@@ -39,16 +41,21 @@ export default function Info() {
       <div className="flex flex-col lg:flex-row lg:items-center gap-8 justify-between mt-6">
         <SocialMedia className="hidden md:flex justify-center gap-14 lg:justify-between items-center lg:gap-4 xl:gap-8 z-20 "/>
         <span className="hidden lg:flex lg:w-14 xl:w-20 h-[2px] rounded-lg bg-zinc-500" />
-        <Btn variant="secondary">
-          <a
-            href="/Curriculo-Nicolas-Yanase.pdf" // Caminho do arquivo no diretório public
-            download="Curriculo-Nicolas-Yanase.pdf" // Nome sugerido para o arquivo ao fazer download
-            className="flex gap-1 items-center"
-          >
-            <p className="lg:w-32 xl:w-44">Download CV</p>{" "}
-            <IconDownload className="font-bold" />
-          </a>
-        </Btn>
+       
+          <Toast>
+            <Btn variant="secondary">
+              <a
+                href="/Curriculo-Nicolas-Yanase.pdf" // Caminho do arquivo no diretório public
+                download="Curriculo-Nicolas-Yanase.pdf" // Nome sugerido para o arquivo ao fazer download
+                className="flex gap-1 items-center"
+              >
+                <p className="lg:w-32 xl:w-44">Download CV</p>{" "}
+                <IconDownload className="font-bold" />
+              </a>
+            </Btn>
+          
+          </Toast>
+        
       </div>
     </motion.article>
   );

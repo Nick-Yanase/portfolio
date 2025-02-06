@@ -1,48 +1,46 @@
 "use client";
-import { IconUserCircle, IconUserCode, IconUserCog, IconUserHexagon, IconUserSquareRounded } from "@tabler/icons-react";
-import { useEffect } from "react";
 
-export default function Menu() {
-  useEffect(() => {
-    let currentScroll = window.scrollY; // Posição atual do scroll
-    let isScrolling = false;
+import { IconMedal, IconMedal2, IconSchool } from "@tabler/icons-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
-    const smoothScroll = () => {
-      if (!isScrolling) {
-        // Emulate inertia: ajusta a posição atual para se aproximar da posição real
-        currentScroll += (window.scrollY - currentScroll) * 0.1;
+export default function Timeline() {
+  const containerRef = useRef(null);
 
-        window.scrollTo(0, currentScroll);
+  // Captura a rolagem da página em relação ao container da timeline
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"], // A animação ocorre durante toda a página
+  });
 
-        if (Math.abs(window.scrollY - currentScroll) > 0.5) {
-          // Continua o loop enquanto houver diferença significativa
-          requestAnimationFrame(smoothScroll);
-        } else {
-          currentScroll = window.scrollY; // Ajusta caso a diferença seja mínima
-        }
-      }
-    };
+  // Movimento da bola: percorre toda a timeline
+  const ballY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
-    const onWheel = () => {
-      if (!isScrolling) {
-        isScrolling = true;
-        requestAnimationFrame(() => {
-          smoothScroll();
-          isScrolling = false;
-        });
-      }
-    };
+  // Rotação da bola: Gira completamente enquanto percorre a timeline
+  const rotateBall = useTransform(scrollYProgress, [0, 1], ["0deg", "1080deg"]); // 3 voltas completas
 
-    window.addEventListener("scroll", onWheel);
+  return (
+    <div ref={containerRef} className="relative flex flex-col items-center w-full min-h-[200vh] py-32 bg-gray-900">
+      
+      {/* Timeline */}
+      <div className="relative w-2 h-[100vh] bg-gradient-to-b from-blue-500 to-purple-500 rounded-full">
+        
+        {/* Bola animada */}
+        <motion.div
+          style={{ y: ballY, rotate: rotateBall }}
+          className="absolute left-1/2 -translate-x-1/2 w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 border-4 border-white shadow-2xl rounded-full"
+        />
 
-    return () => window.removeEventListener("scroll", onWheel);
-  }, []);
+        {/* Checkpoints */}
+        <div className="absolute top-[25%] left-1/2 -translate-x-1/2 w-6 h-6 bg-white border-4 border-blue-500 rounded-full shadow-md" />
+        <div className="absolute top-[50%] left-1/2 -translate-x-1/2 w-6 h-6 bg-white border-4 border-purple-500 rounded-full shadow-md" />
+        <div className="absolute top-[75%] left-1/2 -translate-x-1/2 w-6 h-6 bg-white border-4 border-pink-500 rounded-full shadow-md" />
+      </div>
 
-  return <div style={{ height: "200vh" }}>Rolar para testar a suavidade
-  <IconUserCircle/>
-  <IconUserHexagon/>
-  <IconUserCode/>
-  <IconUserCog/>
-  <IconUserSquareRounded/>
-  </div>;
+      <IconSchool />
+      <IconMedal />
+      <IconMedal2 />
+
+    </div>
+  );
 }
