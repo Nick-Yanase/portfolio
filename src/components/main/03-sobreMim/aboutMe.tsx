@@ -6,7 +6,6 @@ import BlurBlue from "@/components/blurBlue";
 import { useRef } from "react";
 import TechSkills from "./techSkills";
 import InfoMe from "./infoMe";
-import Image from "next/image";
 
 export default function AboutMe() {
   const sectionRef = useRef(null); //referencio a section para que a animação so ocorra quando chegar nessa section

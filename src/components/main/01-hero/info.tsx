@@ -2,7 +2,6 @@ import Btn from "@/components/button";
 import SocialMedia from "@/components/socialMedia";
 import TextGradient from "@/components/textGradient";
 import { Toast } from "@/components/toast";
-import { Toaster } from "@/components/ui/sonner";
 import { IconDownload } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 export default function Info() {
