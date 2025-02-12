@@ -1,46 +1,56 @@
 "use client";
 
-import { IconMedal, IconMedal2, IconSchool } from "@tabler/icons-react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export default function Timeline() {
-  const containerRef = useRef(null);
+gsap.registerPlugin(ScrollTrigger);
 
-  // Captura a rolagem da página em relação ao container da timeline
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"], // A animação ocorre durante toda a página
-  });
+const Timeline = () => {
+  const triangleRef = useRef(null);
+  const timelineRef = useRef(null);
 
-  // Movimento da bola: percorre toda a timeline
-  const ballY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      if (!triangleRef.current || !timelineRef.current) return;
 
-  // Rotação da bola: Gira completamente enquanto percorre a timeline
-  const rotateBall = useTransform(scrollYProgress, [0, 1], ["0deg", "1080deg"]); // 3 voltas completas
+      gsap.to(triangleRef.current, {
+        x: "80vw",
+        rotation: 360,
+        scrollTrigger: {
+          trigger: timelineRef.current,
+          start: "top center",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
+    });
+
+    return () => ctx.revert(); // Limpeza ao desmontar o componente
+  }, []);
 
   return (
-    <div ref={containerRef} className="relative flex flex-col items-center w-full min-h-[200vh] py-32 bg-gray-900">
-      
+    <div className="relative w-full h-[200vh] flex items-center justify-center bg-gray-200">
       {/* Timeline */}
-      <div className="relative w-2 h-[100vh] bg-gradient-to-b from-blue-500 to-purple-500 rounded-full">
-        
-        {/* Bola animada */}
-        <motion.div
-          style={{ y: ballY, rotate: rotateBall }}
-          className="absolute left-1/2 -translate-x-1/2 w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 border-4 border-white shadow-2xl rounded-full"
-        />
-
-        {/* Checkpoints */}
-        <div className="absolute top-[25%] left-1/2 -translate-x-1/2 w-6 h-6 bg-white border-4 border-blue-500 rounded-full shadow-md" />
-        <div className="absolute top-[50%] left-1/2 -translate-x-1/2 w-6 h-6 bg-white border-4 border-purple-500 rounded-full shadow-md" />
-        <div className="absolute top-[75%] left-1/2 -translate-x-1/2 w-6 h-6 bg-white border-4 border-pink-500 rounded-full shadow-md" />
+      <div
+        ref={timelineRef}
+        className="timeline w-[80vw] h-[5px] bg-black absolute top-1/2 left-1/2 -translate-x-1/2"
+      >
+        {/* Triângulo */}
+        <div
+          ref={triangleRef}
+          className="absolute top-[-25px] left-0"
+          style={{
+            width: 0,
+            height: 0,
+            borderLeft: "20px solid transparent",
+            borderRight: "20px solid transparent",
+            borderBottom: "35px solid red",
+          }}
+        ></div>
       </div>
-
-      <IconSchool />
-      <IconMedal />
-      <IconMedal2 />
-
     </div>
   );
-}
+};
+
+export default Timeline;

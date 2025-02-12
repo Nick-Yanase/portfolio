@@ -42,11 +42,11 @@ nav ul li:hover::after{
   right: -10px;
   animation:cursor .8s infinite, digitando 6s steps(300) infinite;
   width: calc(100% + 15px); /* calcular para o cursor ficar atrás das palavras do span */
-  background-color: #120B24;
+  background-color: #0F0A1C;
 }
 @keyframes cursor {
   0%{
-     border-left: 2px solid #120B24;
+     border-left: 2px solid #0F0A1C;
   }
 }
 @keyframes digitando {
@@ -249,7 +249,6 @@ nav ul li:hover::after{
   background: linear-gradient(90deg, #CAA6FF, #003DFF); /* Aplica o gradiente fixo no hover */
   animation: none; /* Para a animação enquanto o botão está em hover */
 }
-
 
 
 @layer base {

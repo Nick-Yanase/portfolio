@@ -43,17 +43,18 @@ export default function Info() {
         <span className="hidden lg:flex lg:w-14 xl:w-20 h-[2px] rounded-lg bg-zinc-500" />
        
           <Toast>
-            <Btn variant="secondary">
-              <a
-                href="/Curriculo-Nicolas-Yanase.pdf" // Caminho do arquivo no diretório public
-                download="Curriculo-Nicolas-Yanase.pdf" // Nome sugerido para o arquivo ao fazer download
-                className="flex gap-1 items-center"
-              >
-                <p className="lg:w-32 xl:w-44">Download CV</p>{" "}
-                <IconDownload className="font-bold" />
+            <a
+                  href="/Curriculo-Nicolas-Yanase.pdf" // Caminho do arquivo no diretório public
+                  download="Curriculo-Nicolas-Yanase.pdf" // Nome sugerido para o arquivo ao fazer download
+                  className="flex gap-1 items-center"
+                >
+                <Btn variant="secondary">
+                
+                    <p className="lg:w-32 xl:w-44">Download CV</p>{" "}
+                    <IconDownload className=" font-bold" />
+                  
+                </Btn>
               </a>
-            </Btn>
-          
           </Toast>
         
       </div>
