@@ -1,8 +1,8 @@
 import TextGradient from "@/components/textGradient";
 import { IconMedal, IconSchool } from "@tabler/icons-react";
-import CarrerCard from "./carrerCard";
+import CarrerCard from "./experienceCard";
 
-export default function CarrerDetails() {
+export default function CareerDetails() {
   return (
     <section className="w-full flex justify-center px-5 pt-12 pb-20 z-10 overflow-hidden">
       <div className="w-full max-w-screen-xl gap-4 grid grid-cols-2 justify-center items-center">
