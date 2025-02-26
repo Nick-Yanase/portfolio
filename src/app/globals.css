@@ -124,6 +124,55 @@ nav ul li:hover::after{
       opacity: 0.8;
     }
 
+
+/* menu experiencia*/
+.menu2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  background-color: #18181b;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 16px;
+  align-items: start;
+
+}
+
+.menu-item2 {
+  position: relative;
+  padding: 8px 12px;
+  color: #ccc;
+  cursor: pointer;
+  z-index: 1;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu-item2:hover {
+  color: #fff;
+}
+
+.menu-item2.active {
+  color: #fff;
+}
+
+.background2 {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  transform: translateX(-50%);
+  height: 33%;
+  width: 80%;
+  background: linear-gradient(to right, #577FFF, #6620FF);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  z-index: 0;
+  opacity: 0.8;
+}
+
 /*SCROLLBAR PERSONALIZADO*/
 ::-webkit-scrollbar{
   width:12px;

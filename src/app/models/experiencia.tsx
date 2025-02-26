@@ -1,8 +1,8 @@
 export default interface Experiencia {
   id: number
   data: string
-  cargo: string
-  local: string
-  responsibilities: string[]
+  titulo: string
+  organizacao: string
+  skills: string[]
   iconOrg: string
 }

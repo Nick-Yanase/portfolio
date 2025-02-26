@@ -1,12 +1,11 @@
-import Experiencia from "../models/experiencia"
 import Formacao from "../models/formacao"
 
 const formacoes: Formacao[] = [
  {
-  id:1,
+  id: 1,
   data: "08/2023 - Atualmente",
-  curso: "Desenvolvimento de software multiplataforma",
-  local: "fatec zl - Ensino superior",
+  titulo: "Desenvolvimento de software multiplataforma",
+  organizacao: "Fatec ZL - Ensino superior",
   iconOrg: "/images/career/formacao/FATEC.png",
   skills:
     [
@@ -18,10 +17,10 @@ const formacoes: Formacao[] = [
 
  },
  {
-  id:2,
+  id:  2,
   data: "01/2023 - 01/2023",
-  curso: "Estágio em TI",
-  local: "etec sm - ensino técnico",
+  titulo: "Estágio em TI",
+  organizacao: "Etec SM - ensino técnico",
   iconOrg: "/images/career/experience/HSF.png",
   skills:
     [

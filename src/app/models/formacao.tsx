@@ -1,8 +1,8 @@
 export default interface Formacao {
   id: number
   data: string
-  curso: string
-  local: string
+  titulo: string
+  organizacao: string
   skills: string[]
   iconOrg: string
 }

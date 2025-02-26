@@ -53,4 +53,5 @@ const Timeline = () => {
   );
 };
 
+// sad IconMedal, iconSchool, iconBriefcase
 export default Timeline;

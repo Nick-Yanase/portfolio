@@ -1,9 +1,17 @@
 import TextGradient from "@/components/textGradient";
 import Image from "next/image";
-
+export interface carrerCardProps {
+  data: string;
+  titulo: string
+  organizacao: string
+  skills: string[]
+  iconOrg: string
+  certificationImage?: string
+}
 export default function CarrerCard(){
+  
   return(
-    <div className="w-[540px] bg-zinc-900/80 backdrop-blur-2xl flex gap-5 justify-between p-6 rounded-xl mt-8 transition-shadow duration-300 ease-in-out hover:shadow-[0_0_2px_1px] hover:shadow-violet-500">
+    <div className="w-[540px] bg-zinc-900/80 backdrop-blur-2xl flex gap-5 justify-between p-6 rounded-xl transition-shadow duration-300 ease-in-out hover:shadow-[0_0_2px_1px] hover:shadow-violet-500">
     <div className="w-16 ">
       <div className="size-16 relative rounded-2xl">
         <Image
