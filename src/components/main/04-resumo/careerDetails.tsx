@@ -1,7 +1,7 @@
 import TextGradient from "@/components/textGradient";
-import { IconBriefcase, IconBriefcase2, IconMedal, IconSchool, IconTargetArrow } from "@tabler/icons-react";
-import CarrerCard from "./carrerCard";
+import {IconBriefcase2, IconMedal, IconSchool, IconTargetArrow } from "@tabler/icons-react";
 import { useEffect, useRef, useState } from "react";
+import CarrerColumns from "./carrerColumns";
 
 export default function CareerDetails() {
    const [activeIndex, setActiveIndex] = useState(0);
@@ -75,11 +75,8 @@ export default function CareerDetails() {
             </div>
 
           </article>
-          <article className="flex flex-col gap-16 items-center">
-          
-            <CarrerCard />
-            <CarrerCard />
-            <CarrerCard />
+          <article className="flex flex-col gap-12 items-center">
+            <CarrerColumns activeIndex={activeIndex}/>
           </article>
 
           <span className="w-[230px] h-full bg-zinc-800">

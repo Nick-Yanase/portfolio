@@ -6,7 +6,7 @@ const formacoes: Formacao[] = [
   data: "08/2023 - Atualmente",
   titulo: "Desenvolvimento de software multiplataforma",
   organizacao: "Fatec ZL - Ensino superior",
-  iconOrg: "/images/career/formacao/FATEC.png",
+  iconOrg: "/images/career/formation/FATEC.png",
   skills:
     [
       "Desenvolvimento de softwares", 
@@ -21,7 +21,7 @@ const formacoes: Formacao[] = [
   data: "01/2023 - 01/2023",
   titulo: "Estágio em TI",
   organizacao: "Etec SM - ensino técnico",
-  iconOrg: "/images/career/experience/HSF.png",
+  iconOrg: "/images/career/formation/ETEC.png",
   skills:
     [
       "Desenvolvimento de softwares", 

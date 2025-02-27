@@ -97,7 +97,7 @@ export default function Footer() {
         <div className="w-full flex-col flex gap-8">
           <div className="w-full h-[3px] rounded-lg bg-zinc-500" />
           <div className="flex flex-col md:flex-row justify-center md:justify-between items-center text-sm text-zinc-400 ">
-            <p className="text-center">© Copyright 2025. Desenvolvido por Nicolas Yanase</p>
+            <p className="text-center">© Copyright {new Date().getFullYear()}. Desenvolvido por Nicolas Yanase</p>
             <p className=" font-semibold flex gap-2 items-center">Feito com 
             <TextGradient 
                 primaryColor="#CAA6FF" 

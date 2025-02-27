@@ -41,17 +41,15 @@ export default function Info() {
         <SocialMedia className="hidden md:flex justify-center gap-14 lg:justify-between items-center lg:gap-4 xl:gap-8 z-20 "/>
         <span className="hidden lg:flex lg:w-14 xl:w-20 h-[2px] rounded-lg bg-zinc-500" />
        
-          <Toast>
+          <Toast >
             <a
-                  href="/Curriculo-Nicolas-Yanase.pdf" // Caminho do arquivo no diretório public
-                  download="Curriculo-Nicolas-Yanase.pdf" // Nome sugerido para o arquivo ao fazer download
-                  className="flex gap-1 items-center"
-                >
+              href="/Curriculo-Nicolas-Yanase.pdf" // Caminho do arquivo no diretório public
+              download="Curriculo-Nicolas-Yanase.pdf" // Nome sugerido para o arquivo ao fazer download
+              className="flex gap-1 items-center w-64"
+            >
                 <Btn variant="secondary">
-                
-                    <p className="lg:w-32 xl:w-44">Download CV</p>{" "}
-                    <IconDownload className=" font-bold" />
-                  
+                  Download CV
+                  <IconDownload size={40} className="font-bold" />
                 </Btn>
               </a>
           </Toast>
