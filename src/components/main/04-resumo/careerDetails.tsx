@@ -7,7 +7,7 @@ export default function CareerDetails() {
    const [activeIndex, setActiveIndex] = useState(0);
     const backgroundRef = useRef<HTMLDivElement>(null);
     const menuRef = useRef<HTMLDivElement>(null);
-  
+
     const sectionRef = useRef(null);
   
     useEffect(() => {
@@ -76,7 +76,7 @@ export default function CareerDetails() {
 
           </article>
           <article className="flex flex-col gap-12 items-center">
-            <CarrerColumns activeIndex={activeIndex}/>
+            <CarrerColumns sectionRef={sectionRef} activeIndex={activeIndex}/>
           </article>
 
           <span className="w-[230px] h-full bg-zinc-800">
