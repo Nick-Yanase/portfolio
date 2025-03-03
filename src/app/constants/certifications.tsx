@@ -54,7 +54,7 @@ const certifications: certification[] = [
     "Desenvolvimento Web", "UX/UI design", "Banco de dados", "Frameworks"
   ],
   iconOrg: "/images/career/certification/CPS.png",
-  certificationImage:"/images/career/certification/informatica-internet.png"
+  certificationImage:"/images/career/certification/Informatica-internet.png"
   },
 
 ]

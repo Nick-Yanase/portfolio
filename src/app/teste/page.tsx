@@ -15,12 +15,12 @@ const Timeline = () => {
       if (!triangleRef.current || !timelineRef.current) return;
 
       gsap.to(triangleRef.current, {
-        x: "80vw",
+        y: "80vh", // Movimento na vertical
         rotation: 360,
         scrollTrigger: {
           trigger: timelineRef.current,
           start: "top center",
-          end: "bottom top",
+          end: "bottom center",
           scrub: 1,
         },
       });
@@ -31,21 +31,21 @@ const Timeline = () => {
 
   return (
     <div className="relative w-full h-[200vh] flex items-center justify-center bg-gray-200">
-      {/* Timeline */}
+      {/* Timeline vertical */}
       <div
         ref={timelineRef}
-        className="timeline w-[80vw] h-[5px] bg-black absolute top-1/2 left-1/2 -translate-x-1/2"
+        className="timeline h-[80vh] w-[5px] bg-black absolute top-1/2 left-1/2 -translate-x-1/2"
       >
-        {/* Triângulo */}
+        {/* Triângulo animado */}
         <div
           ref={triangleRef}
-          className="absolute top-[-25px] left-0"
+          className="absolute left-[-15px] top-0"
           style={{
             width: 0,
             height: 0,
             borderLeft: "20px solid transparent",
             borderRight: "20px solid transparent",
-            borderBottom: "35px solid red",
+            borderTop: "35px solid red", // Ajuste para um triângulo apontando para cima
           }}
         ></div>
       </div>
@@ -53,5 +53,4 @@ const Timeline = () => {
   );
 };
 
-// sad IconMedal, iconSchool, iconBriefcase
 export default Timeline;
