@@ -11,7 +11,7 @@ const experiencias: Experiencia[] = [
     "Desenvolvimento de softwares", 
     "Automação de Recursos",
     "Gestão de Servidores",
-    "Soluções técnicas"
+    "Análises de sistemas"
   ]
 
  },
@@ -23,9 +23,9 @@ const experiencias: Experiencia[] = [
   iconOrg: "/images/career/experience/DEV-FREE.png",
   skills:[
     "Desenvolvimento de softwares", 
-    "Automação de Recursos",
-    "Gestão de Servidores",
-    "Soluções técnicas"
+    "Design responsivos",
+    "Landing Pages",
+    "Criações de logotipos"
   ]
  },
 ]

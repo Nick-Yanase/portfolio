@@ -11,6 +11,7 @@ export default function AboutMe() {
   const sectionRef = useRef(null); //referencio a section para que a animação so ocorra quando chegar nessa section
   return (
     <motion.section
+      id="sobre"
       viewport={{ once: true }} //não deixa a animação ocorrer novamente
       ref={sectionRef} //section refereciada para ocorrer a animação
       className="w-full bg-purple/[13%] flex gap-8 justify-center items-center relative px-5 pt-12 pb-20 z-10 overflow-hidden"

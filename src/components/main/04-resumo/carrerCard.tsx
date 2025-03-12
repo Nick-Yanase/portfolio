@@ -41,12 +41,22 @@ export default function CarrerCard(props: carrerCardProps) {
             />
           </div>
         </div>
-        <div className="flex-1 flex flex-col gap-1 ">
+        <div className="flex-1 flex flex-col gap-[5px] ">
           <p className="text-sm md:text-base text-zinc-500">{data}</p>
           <h3 className="text-xl md:text-2xl font-semibold text-white">{titulo}</h3>
-          <p className="text-base md:text-lg text-zinc-400 font-semibold tracking-widest uppercase">
-            {organizacao}
-          </p>
+          <div className="flex gap-3 items-start">
+            <div className="relative size-7 sm:hidden">
+              <Image
+                src={iconOrg}
+                alt={organizacao}
+                fill
+                className="object-cover rounded-sm"
+              />
+            </div>
+            <p className="text-base md:text-lg text-zinc-400 font-semibold tracking-widest uppercase">
+              {organizacao}
+            </p>
+          </div>
           <div className="flex flex-wrap gap-x-4 gap-y-1 pt-2">
             {skills.map((skill, index) => (
               <TextGradient

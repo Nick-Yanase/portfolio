@@ -7,8 +7,9 @@ const certifications: certification[] = [
     titulo: "Google AI Essentials",
     organizacao: "Coursera",
     skills: [
-      "Componentização", "Typescript", "Consumo de APIs", "POO"
+      "IA generativa", "Engenharia de prompt", "Automação com IA", "Ferramentas de IA"
     ],
+ 
     iconOrg: "/images/career/certification/GOOGLE.png",
     certificationImage:"/images/career/certification/GoogleIAEssentials.png"
 
@@ -19,7 +20,7 @@ const certifications: certification[] = [
     titulo: "Front-end em React",
     organizacao: "Ada tech",
     skills: [
-      "IA generativa", "Engenharia de prompt", "Automação com IA", "Ferramentas de IA"
+      "Componentização", "Typescript", "Consumo de APIs", "POO"
     ],
     iconOrg: "/images/career/certification/ADA.png",
     certificationImage:"/images/career/certification/React.png"

@@ -10,24 +10,24 @@ const formacoes: Formacao[] = [
   skills:
     [
       "Desenvolvimento de softwares", 
-      "Automação de Recursos",
-      "Gestão de Servidores",
-      "Soluções técnicas"
+      "Análise de dados",
+      "UX & UI Design",
+      "Engenharia de softweare"
     ]
 
  },
  {
   id:  2,
   data: "01/2023 - 01/2023",
-  titulo: "Estágio em TI",
+  titulo: "Informática para internet",
   organizacao: "Etec SM - ensino técnico",
   iconOrg: "/images/career/formation/ETEC.png",
   skills:
     [
-      "Desenvolvimento de softwares", 
-      "Automação de Recursos",
-      "Gestão de Servidores",
-      "Soluções técnicas"
+      "Front-end", 
+      "Back-end",
+      "Gestão de banco de dados",
+      "Gestão de projetos"
     ]
 
  },

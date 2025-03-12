@@ -1,5 +1,4 @@
 "use client";
-
 import TextGradient from "@/components/textGradient";
 import { IconBriefcase2, IconMedal, IconSchool, IconTargetArrow } from "@tabler/icons-react";
 import { useEffect, useRef, useState } from "react";
@@ -42,11 +41,8 @@ export default function CareerDetails() {
     }
   }, [activeIndex]);
 
-
-
-
   return (
-    <section ref={sectionRef} className="relative w-full flex justify-center px-5 pt-12 pb-20 z-10 overflow-hidden">
+    <section id="carreira" ref={sectionRef} className="relative w-full flex justify-center px-5 pt-12 pb-20 z-10 overflow-hidden">
       <div className="w-full max-w-screen-xl flex flex-col items-center">
         <div className="titulo flex gap-2 items-center justify-center">
           <IconTargetArrow
