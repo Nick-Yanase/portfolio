@@ -17,7 +17,7 @@ const buttonVariants = tv({
       quinary: 
       "bg-zinc-800 p-2 w-full rounded-2xl font-semibold transition-all border-violet-500 hover:border hover:text-violet-400 hover:bg-transparent",
       senary:
-      "w-44 px-0 h-12 font-semibold transition-all border bg-transparent hover:bg-zinc-700 border border-zinc-700 mt-3 text-zinc-400 hover:text-white rounded-xl"
+      "w-full sm:w-44 px-0 h-12 font-semibold transition-all border bg-transparent hover:bg-zinc-700 border border-zinc-700 mt-3 text-zinc-400 hover:text-white rounded-xl "
     },
       
   },
