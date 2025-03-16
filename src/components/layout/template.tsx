@@ -46,7 +46,7 @@ export default function Template(props: templateProps) {
         >
           <Header />
           <main
-            className={`w-full flex-col flex justify-center items-center bg-zinc-950 overflow-hidden ${props.className ?? ''}`}
+            className={`w-full flex-col flex justify-center items-center overflow-hidden ${props.className ?? ''}`}
           >
             {props.children}
           </main>

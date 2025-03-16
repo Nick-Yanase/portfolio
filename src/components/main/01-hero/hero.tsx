@@ -3,7 +3,7 @@ import ImageMe from "./imageMe";
 import BlurPurple from "@/components/blurPurple";
 export default function Hero() {
   return (
-    <section id="home" className="w-full bg-purple/[7%] flex justify-center pt-28 2xl:pt-[130px] p-5 relative z-10 overflow-hidden">
+    <section id="home" className="w-full bg-white dark:bg-zinc-950 dark:bg-purple/[7.5%] dark:bg-blend-soft-light flex justify-center pt-28 2xl:pt-[130px] p-5 relative z-10 overflow-hidden">
       <div className="max-w-screen-xl w-full flex flex-col md:flex-row items-center md:gap-4 justify-between lg:py-10 z-20">
         <Info />
         <ImageMe />
