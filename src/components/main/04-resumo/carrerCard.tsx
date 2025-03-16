@@ -89,7 +89,7 @@ export default function CarrerCard(props: carrerCardProps) {
                 <div className="flex flex-col gap-2">
                   <motion.div
                     onClick={handleClickInside}
-                    className="w-[350px] h-[250px] sm:w-[600px] sm:h-[400px]  md:w-[750px] md:h-[450px] lg:w-[1000px] lg:h-[600px] relative"
+                    className="w-[350px] h-[250px] sm:w-[600px] sm:h-[400px]  md:w-[700px] md:h-[400px] lg:w-[800px] lg:h-[500px] xl:w-[900px] xl:h-[600px] relative"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
