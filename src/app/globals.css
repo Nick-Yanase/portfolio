@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+:root {
+  --cursor-bg: #fff; /* Light Mode */
+}
+
+.dark {
+  --cursor-bg: #0e0817; /* Dark Mode */
+}
+
 body {
   font-family: "Inter";
 }
@@ -34,21 +42,24 @@ nav ul li:hover::after{
 .txt-animated span{
   position: relative;
 }
-.txt-animated span::after{
+.txt-animated span::after {
   content: "";
   position: absolute;
   height: 100%;
   border-left: 2px solid #CAA6FF;
   right: -10px;
-  animation:cursor .8s infinite, digitando 6s steps(300) infinite;
-  width: calc(100% + 15px); /* calcular para o cursor ficar atrás das palavras do span */
-  background-color: #0F0A1C;
+  animation: cursor 0.8s infinite, digitando 6s steps(300) infinite;
+  width: calc(100% + 15px);
+  background-color: var(--cursor-bg);
 }
+
 @keyframes cursor {
   0%{
      border-left: 2px solid #0F0A1C;
   }
 }
+
+
 @keyframes digitando {
   10%, 12%, 15%, 21%, 26%, 30%, 35%, 41%, 46%, 50%, 55%, 61%, 70%, 75%, 81%, 86%, 90%, 95%{
     width:0;   
@@ -59,7 +70,6 @@ nav ul li:hover::after{
 }
 .txt-animated span::before{
   content: "";
-  color:#CAA6FF;
   animation: txt-dinamico 30s infinite;  /*30 = 30 / 5 palavras => 6s para cada*/
 }
 @keyframes txt-dinamico {

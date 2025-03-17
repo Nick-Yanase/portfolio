@@ -9,7 +9,7 @@ const buttonVariants = tv({
       primary:
         "lg:px-10 py-3 md:py-4 relative bg-gradient-to-r from-[#3B6AFF] to-[#6620FF] bg-[length:100%_450%] bg-[position:0%_0%] hover:bg-[length:300%_10%] rounded-2xl",
       secondary:
-        "w-full border-violet-500 border-[3px] py-4 text-violet-400 hover:text-white hover:border-violet-500 hover:bg-violet-500 font-semibold rounded-2xl bg-transparent hidden md:flex gap-2",
+        "w-full border-violet-500 border-[2px] dark:border-[3px] py-4 text-violet-500 dark:text-violet-400 hover:text-white hover:border-violet-500 hover:bg-violet-500 font-semibold rounded-2xl bg-transparent hidden md:flex gap-2",
       terciary:
         "border-violet-500 border-[3px] px-16 py-4 text-violet-400 hover:text-white hover:border-violet-500 hover:bg-violet-500 text-xl font-semibold rounded-2xl bg-transparent flex md:hidden",
       quaternary:
