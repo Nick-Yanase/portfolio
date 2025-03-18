@@ -17,17 +17,17 @@ export default function Info() {
       </h2>
       <div className="w-full flex flex-col items-center md:items-start">
         <TextGradient
-          // primaryColor="#6128FF"
-          // secondaryColor="#CAA6FF"
+          primaryColor="#B96FFF"
+          secondaryColor="#6200FF"
           className="  text-4xl md:text-5xl xl:text-6xl font-bold py-1 lg:py-2 text-center md:text-start"
         >
           {" "}
           Desenvolvedor Web +
         </TextGradient>
         <TextGradient
-          primaryColor="#CAA6FF"
-          secondaryColor="#003DFF"
-          className="text-4xl md:text-5xl xl:text-6xl font-bold py-1  lg:py-2"
+           primaryColor="#B96FFF"
+          secondaryColor="#6200FF"
+          className="text-4xl md:text-5xl xl:text-6xl font-bold py-1 lg:py-2 text-center md:text-left"
         >
           {" "}
           UI & UI Designer

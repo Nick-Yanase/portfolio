@@ -50,7 +50,7 @@ export default function Projetos() {
     visible: { opacity: 1, y: 0 },
   };
   return (
-    <motion.section id="projetos" ref={sectionRef} className="w-full flex justify-center items-center py-12 relative overflow-hidden">
+    <motion.section id="projetos" ref={sectionRef} className="w-full flex justify-center items-center py-12 relative overflow-hidden bg-violet-100 dark:bg-zinc-950">
       <article className="w-full max-w-screen-2xl justify-center flex flex-col gap-8 z-20 items-center">
         <div className="titulo flex gap-2 items-center">
           <IconCubeSpark

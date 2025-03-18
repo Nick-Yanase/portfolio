@@ -8,10 +8,10 @@ export interface TextGradientProps {
 export default function TextGradient(props: TextGradientProps) {
   return (
     <div
-      className={`bg-gradient-to-r from-[#CAA6FF] to-[#6128FF]
-        from-[${props.primaryColor}] to-[${props.secondaryColor}] 
-        dark:bg-gradient-to-r dark:from-[#CAA6FF] dark:to-[#003DFF] bg-[length:170%_100%]
-       bg-clip-text text-transparent w-fit`}
+      className={`dark:bg-gradient-to-r dark:from-[#CAA6FF] dark:to-[#003DFF] bg-[length:170%_100%]
+       bg-clip-text text-transparent w-fit bg-gradient-to-r from-[#B486FF] to-[#6128FF] 
+      
+        `}
     >
       <p className={props.className}>
         {props.children}
