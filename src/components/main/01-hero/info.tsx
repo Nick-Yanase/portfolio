@@ -30,7 +30,7 @@ export default function Info() {
           className="text-4xl md:text-5xl xl:text-6xl font-bold py-1 lg:py-2 text-center md:text-left"
         >
           {" "}
-          UI & UI Designer
+          UI & UX Designer
         </TextGradient>
       </div>
 
