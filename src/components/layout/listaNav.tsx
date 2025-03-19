@@ -24,12 +24,12 @@ export default function ListaNav(props: listaNavProps) {
       <li className="transition all durantion-500 dark:hover:text-white p-1">
         <Link href={"#carreira"}className="flex gap-2 "><IconMedal className="md:hidden"/>Carreira</Link>
       </li>
-      <li className=" flex justify-start ml-3 items-center w-full">
+      <li className=" flex justify-start ml-3 items-center w-full md:opacity-0 md:hidden ">
         <button
           onClick={toggleTheme}
-          className=" md:hidden flex relative items-center justify-center w-3/5 py-4 bg-violet-500 rounded-lg text-white">
-            <IconSun className="absolute transition-transform duration-500 ease-out hover:text-purple2 hover:rotate-90 dark:scale-0 scale-100 " size={24}/>
-            <IconMoon className="absolute transition-transform duration-500 ease-out dark:text-zinc-400 dark:hover:text-purple-light hover:rotate-180 dark:scale-100 scale-0 " size={24}/>
+          className="flex relative items-center justify-center w-2/5 py-5 bg-violet-500 rounded-lg ">
+            <IconSun className="absolute transition-transform duration-500 ease-out text-white  hover:rotate-90 dark:scale-0 scale-100 " size={24}/>
+            <IconMoon className="absolute transition-transform duration-500 ease-out dark:text-white dark:hover:text-purple-light hover:rotate-180 dark:scale-100 scale-0 " size={24}/>
         </button>
       </li>
     </ul>

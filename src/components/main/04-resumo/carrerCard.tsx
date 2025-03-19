@@ -30,7 +30,7 @@ export default function CarrerCard(props: carrerCardProps) {
     props;
   return (
     <>
-      <div className="flex-1 sm:flex-auto sm:w-[480px] lg:w-[540px] bg-zinc-900/80 backdrop-blur-2xl flex gap-5 justify-between p-6 rounded-xl transition-shadow duration-300 ease-in-out hover:shadow-[0_0_2px_1px] hover:shadow-violet-500 z-20">
+      <div className="flex-1 sm:flex-auto sm:w-[480px] lg:w-[540px] bg-white border border-violet-100 dark:border-none dark:bg-zinc-900/80 backdrop-blur-2xl flex gap-5 justify-between p-6 rounded-xl transition-shadow duration-300 ease-in-out hover:shadow-[0_0_2px_1px] hover:shadow-violet-500 z-20">
         <div className="hidden sm:flex w-16 ">
           <div className="size-16 relative">
             <Image
@@ -43,7 +43,7 @@ export default function CarrerCard(props: carrerCardProps) {
         </div>
         <div className="flex-1 flex flex-col gap-[5px] ">
           <p className="text-sm md:text-base text-zinc-500">{data}</p>
-          <h3 className="text-xl md:text-2xl font-semibold text-white">{titulo}</h3>
+          <h3 className="text-zinc-700 dark:text-white text-xl md:text-2xl font-semibold ">{titulo}</h3>
           <div className="flex gap-3 items-start">
             <div className="relative size-7 sm:hidden">
               <Image
@@ -53,7 +53,7 @@ export default function CarrerCard(props: carrerCardProps) {
                 className="object-cover rounded-sm"
               />
             </div>
-            <p className="text-base md:text-lg text-zinc-400 font-semibold tracking-widest uppercase">
+            <p className="text-base md:text-lg text-zinc-500 dark:text-zinc-400 font-semibold tracking-widest uppercase">
               {organizacao}
             </p>
           </div>

@@ -27,10 +27,10 @@ export default function InfoMe(props: infoMeProps) {
         </div>
 
         <div>
-          <p className="font-semibold text-lg text-white">
-            Nicolas Yanase, 19 anos
+          <p className="font-semibold text-lg text-violet-900 dark:text-white">
+            Nicolas Yanase, 20 anos
           </p>
-          <p className="font-medium text-zinc-400">(11) 96620 - 6286</p>
+          <p className="font-medium text-violet-500 dark:text-zinc-400">(11) 96620 - 6286</p>
         </div>
       </motion.div>
 
@@ -39,7 +39,7 @@ export default function InfoMe(props: infoMeProps) {
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 1.8 }}
         viewport={{ root: sectionRef, once: true }}
-        className="text-zinc-300 flex flex-col gap-4 sm:px-10 md:p-0 items-start"
+        className="text-zinc-700 dark:text-zinc-300 flex flex-col gap-4 sm:px-10 md:p-0 items-start"
       >
         <p>
           Desenvolvedor de software e designer com experiência na criação de

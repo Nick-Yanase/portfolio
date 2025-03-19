@@ -18,7 +18,7 @@ export default function Header() {
         <Logotipo />
         <div className="flex justify-end items-center size-full gap-4 md:gap-6 lg:gap-10">
           <ListaNav className={"hidden md:flex text-sm md:text-base lg:gap-10 text-violet-950 dark:text-zinc-400"}/>
-          <div className="flex gap-8">
+          <div className="flex gap-10">
             <span className="hidden md:flex h-12 w-[1.5px] rounded-lg bg-zinc-300 dark:bg-zinc-600 "></span>
             <button
               onClick={toggleTheme} 

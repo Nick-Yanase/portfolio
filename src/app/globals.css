@@ -10,6 +10,7 @@
 .dark {
   --cursor-bg: #0e0817; /* Dark Mode */
   --menu-bg: linear-gradient(to right, #577FFF, #6620FF);
+  
 }
 
 body {
@@ -155,7 +156,7 @@ nav ul li:hover::after{
 .menu-item2 {
   position: relative;
   padding: 8px 12px;
-  color: #ccc;
+  color: #4C1D95;
   cursor: pointer;
   z-index: 1;
   transition: color 0.3s;
@@ -165,7 +166,7 @@ nav ul li:hover::after{
 }
 
 .menu-item2:hover {
-  color: #fff;
+  color: #4C1D95;
 }
 
 .menu-item2.active {
@@ -179,7 +180,7 @@ nav ul li:hover::after{
   transform: translateX(-50%);
   height: 33%;
   width: 80%;
-  background: linear-gradient(to right, #577FFF, #6620FF);
+  background: var(--menu-bg);
   border-radius: 10px;
   transition: all 0.3s ease;
   z-index: 0;
