@@ -12,34 +12,34 @@ export default function Info() {
       transition={{ duration: 1.5 }}
       className="px-2 w-full md:w-3/5 flex flex-col gap-3 items-center md:items-start"
     >
-      <h2 className="text-zinc-300 text-xl lg:text-2xl xl:text-4xl font-bold text-center md:text-start">
-        Olá, me chamo Nicolas Yanase
+      <h2 className="text-violet-900 dark:text-zinc-300 text-xl lg:text-2xl xl:text-4xl font-bold text-center md:text-start">
+       Olá, me chamo Nicolas Yanase
       </h2>
       <div className="w-full flex flex-col items-center md:items-start">
         <TextGradient
-          primaryColor="#CAA6FF"
-          secondaryColor="#003DFF"
-          className="text-4xl md:text-5xl xl:text-6xl font-bold py-1 lg:py-2 text-center md:text-start"
+          primaryColor="#B96FFF"
+          secondaryColor="#6200FF"
+          className="  text-4xl md:text-5xl xl:text-6xl font-bold py-1 lg:py-2 text-center md:text-start"
         >
           {" "}
           Desenvolvedor Web +
         </TextGradient>
         <TextGradient
-          primaryColor="#CAA6FF"
-          secondaryColor="#003DFF"
-          className="text-4xl md:text-5xl xl:text-6xl font-bold py-1  lg:py-2"
+           primaryColor="#B96FFF"
+          secondaryColor="#6200FF"
+          className="text-4xl md:text-5xl xl:text-6xl font-bold py-1 lg:py-2 text-center md:text-left"
         >
           {" "}
-          UI Designer
+          UI & UI Designer
         </TextGradient>
       </div>
 
-      <div className="txt-animated text-base lg:text-xl text-center md:text-start">
+      <div className="txt-animated text-base lg:text-xl text-center md:text-start text-violet-900 dark:text-violet-400">
         <span></span>
       </div>
       <div className="flex flex-col lg:flex-row lg:items-center gap-8 justify-between mt-6">
         <SocialMedia className="hidden md:flex justify-center gap-14 lg:justify-between items-center lg:gap-4 xl:gap-8 z-20 "/>
-        <span className="hidden lg:flex lg:w-14 xl:w-20 h-[2px] rounded-lg bg-zinc-500" />
+        <span className="hidden lg:flex lg:w-14 xl:w-20 h-[2px] rounded-lg bg-violet-300 dark:bg-zinc-500" />
        
           <Toast >
             <a

@@ -14,7 +14,7 @@ export default function AboutMe() {
       id="sobre"
       viewport={{ once: true }} //não deixa a animação ocorrer novamente
       ref={sectionRef} //section refereciada para ocorrer a animação
-      className="w-full bg-purple/[13%] flex gap-8 justify-center items-center relative px-5 pt-12 pb-20 z-10 overflow-hidden"
+      className="w-full bg-white dark:bg-[#150C2B] flex gap-8 justify-center items-center relative px-5 pt-12 pb-20 z-10 overflow-hidden"
     >
       <div className="w-full max-w-screen-xl flex flex-col items-center gap-10">
         <div className="titulo flex gap-2 items-center">

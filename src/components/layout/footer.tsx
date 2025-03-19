@@ -65,7 +65,7 @@ export default function Footer() {
                 secondaryColor="#003DFF"
                 className="text-2xl font-bold">Navegação 
               </TextGradient>
-              <ListaNav className={"flex-col gap-5"} />
+              <ListaNav className={"flex-col gap-5 text-zinc-400"} />
             </div>
             <div className="flex flex-col gap-5">
               <TextGradient 

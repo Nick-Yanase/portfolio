@@ -44,7 +44,7 @@ export default function ProjectsColumns(props: projectsColumnsProps){
               key={projeto.id}
               variants={itemVariants}
               transition={{ duration: 0.5 }}
-              className="bg-zinc-900 rounded-xl flex flex-col w-[340px] md:w-[400px] p-6 items-center justify-center gap-4 group relative shadow-lg"
+              className="bg-white dark:bg-zinc-900 rounded-xl flex flex-col w-[340px] md:w-[400px] p-6 items-center justify-center gap-4 group relative shadow-lg"
             >
               {/* Imagem do projeto */}
               <div className="w-[300px] md:w-[355px] h-44 md:h-52 rounded-lg relative overflow-hidden">
@@ -52,7 +52,7 @@ export default function ProjectsColumns(props: projectsColumnsProps){
               </div>
               {/* Conteúdo do projeto */}
               <div className="flex flex-col gap-1">
-                <h3 className="text-white  font-semibold text-lg">
+                <h3 className="text-purple/80 dark:text-white font-semibold text-lg">
                   {projeto.name}
                 </h3>
                 <p className="text-400">{projeto.desc}</p>
@@ -62,7 +62,7 @@ export default function ProjectsColumns(props: projectsColumnsProps){
                   {projeto.stacks.map((stack, index) => (
                     <div
                       key={index}
-                      className="px-3 py-1 text-sm text-[#B67DFC] border-[#B67DFC] border rounded-lg"
+                      className="px-3 py-1 text-sm text-violet-600 border-violet-500 dark:text-[#B67DFC] dark:border-[#B67DFC] border rounded-lg"
                     >
                       <p>{stack}</p>
                     </div>
@@ -89,9 +89,9 @@ export default function ProjectsColumns(props: projectsColumnsProps){
                 </div>
               </div>
               {/* Efeito de hover e botões adicionais */}
-              <div className="absolute inset-0 bg-zinc-950 bg-opacity-85  rounded-xl flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm border border-violet-500">
+              <div className="absolute inset-0 bg-zinc-400 dark:bg-zinc-950 bg-opacity-40 dark:bg-opacity-85  rounded-xl flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm border border-violet-500">
                 <div className="flex flex-col justify-center items-center gap-4">
-                  <div className="w-full flex justify-center text-lg text-zinc-300">
+                  <div className="w-full flex justify-center text-lg text-white dark:text-zinc-300">
                     <p>Visualizar o projeto:</p>
                   </div>
                   {projeto.linkProjects[0] && (
@@ -99,7 +99,7 @@ export default function ProjectsColumns(props: projectsColumnsProps){
                       link={projeto.linkProjects[0]}
                       variant="quaternary"
                     >
-                      <span className="flex gap-1 items-center">
+                      <span className="flex gap-1 items-center ">
                         <p className="space-x-2">Figma</p>
                         <IconBrandFigma />
                       </span>
@@ -154,7 +154,7 @@ export default function ProjectsColumns(props: projectsColumnsProps){
                       key={projeto.id}
                       variants={itemVariants}
                       transition={{ duration: 0.5 }}
-                      className="bg-zinc-900 rounded-xl flex flex-col w-[340px] md:w-[400px] p-6 items-center justify-center gap-4 group relative shadow-lg"
+                      className="bg-white dark:bg-zinc-900 rounded-xl flex flex-col w-[340px] md:w-[400px] p-6 items-center justify-center gap-4 group relative shadow-lg"
                     >
                       {/* Imagem do projeto */}
                       <div className="w-[300px] md:w-[355px] h-44 md:h-52 rounded-lg relative overflow-hidden">
@@ -163,7 +163,7 @@ export default function ProjectsColumns(props: projectsColumnsProps){
 
                       {/* Conteúdo do projeto */}
                       <div className="flex flex-col gap-1">
-                        <h3 className="text-white  font-semibold text-lg">
+                        <h3 className="text-purple/80 dark:text-white font-semibold text-lg">
                           {projeto.name}
                         </h3>
                         <p className="text-400">{projeto.desc}</p>
@@ -174,7 +174,7 @@ export default function ProjectsColumns(props: projectsColumnsProps){
                           {projeto.stacks.map((stack, index) => (
                             <div
                               key={index}
-                              className="px-3 py-1 text-sm text-[#B67DFC] border-[#B67DFC] border rounded-lg"
+                              className="px-3 py-1 text-sm text-violet-600 border-violet-500 dark:text-[#B67DFC] dark:border-[#B67DFC] border rounded-lg"
                             >
                               <p>{stack}</p>
                             </div>
@@ -202,7 +202,7 @@ export default function ProjectsColumns(props: projectsColumnsProps){
                       </div>
 
                       {/* Efeito de hover e botões adicionais */}
-                      <div className="absolute inset-0 bg-zinc-950 bg-opacity-85 rounded-xl flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm border border-violet-500">
+                      <div className="absolute inset-0 bg-zinc-400 dark:bg-zinc-950 bg-opacity-40 dark:bg-opacity-85  rounded-xl flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm border border-violet-500">
                         <div className="flex flex-col justify-center items-center gap-4">
                           <div className="w-full flex justify-center text-lg text-zinc-300">
                             <p>Visualizar o projeto:</p>
@@ -269,7 +269,7 @@ export default function ProjectsColumns(props: projectsColumnsProps){
                       key={projeto.id}
                       variants={itemVariants}
                       transition={{ duration: 0.5 }}
-                      className="bg-zinc-900 rounded-xl flex flex-col w-[340px] md:w-[400px] p-6 items-center justify-center gap-4 group relative shadow-lg"
+                      className="bg-white dark:bg-zinc-900 rounded-xl flex flex-col w-[340px] md:w-[400px] p-6 items-center justify-center gap-4 group relative shadow-lg"
                     >
                       {/* Imagem do projeto */}
                       <div className="w-[300px] md:w-[355px] h-44 md:h-52 rounded-lg relative overflow-hidden">
@@ -278,7 +278,7 @@ export default function ProjectsColumns(props: projectsColumnsProps){
 
                       {/* Conteúdo do projeto */}
                       <div className="flex flex-col gap-1">
-                        <h3 className="text-white  font-semibold text-lg">
+                        <h3 className="text-purple/80 dark:text-white font-semibold text-lg">
                           {projeto.name}
                         </h3>
                         <p className="text-400">{projeto.desc}</p>
@@ -289,7 +289,7 @@ export default function ProjectsColumns(props: projectsColumnsProps){
                           {projeto.stacks.map((stack, index) => (
                             <div
                               key={index}
-                              className="px-3 py-1 text-sm text-[#B67DFC] border-[#B67DFC] border rounded-lg"
+                              className="px-3 py-1 text-sm text-violet-600 border-violet-500 dark:text-[#B67DFC] dark:border-[#B67DFC] border rounded-lg"
                             >
                               <p>{stack}</p>
                             </div>
@@ -316,7 +316,7 @@ export default function ProjectsColumns(props: projectsColumnsProps){
                         </div>
                       </div>
                       {/* Efeito de hover e botões adicionais */}
-                      <div className="absolute inset-0 bg-zinc-950 bg-opacity-85 rounded-xl flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm border border-violet-500">
+                      <div className="absolute inset-0 bg-zinc-400 dark:bg-zinc-950 bg-opacity-40 dark:bg-opacity-85  rounded-xl flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm border border-violet-500">
                         <div className="flex flex-col justify-center items-center gap-4">
                           <div className="w-full flex justify-center text-lg text-zinc-300">
                             <p>Visualizar o projeto:</p>

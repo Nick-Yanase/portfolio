@@ -12,6 +12,7 @@ export default {
   		colors: {
   			blue: '#3B6AFF',
   			purple: '#6620FF',
+				purple2: "#864FF6",
 				'purple-dark': '#0D0021',
   			'purple-light': '#CAA6FF',
   			background: 'hsl(var(--background))',

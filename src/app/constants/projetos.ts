@@ -33,11 +33,11 @@ const projetos: Projeto[] = [
   },
   {
     id: 4,
-    name: "Meu portfólio",
+    name: "Meu portfolio",
     desc: "Uma aplicação que apresenta projetos web modernos, destacando habilidades em React, Next.js e soluções inovadoras de design.",
     image: "/images/projects/portfolio.png",
     stacks: ["Figma", "Next.js", "Shadcn/UI", "Tailwind CSS", "Typescript"],
-    linkProjects: ["https://www.figma.com/design/8F2YXcqKQzgWa6Iw9IqKwT/Portfolio---nicky?node-id=45-60&t=v66KgHHZcP7RwnmF-1", "https://github.com/Nick-Yanase/portfolio.git", ""],
+    linkProjects: ["https://www.figma.com/design/8F2YXcqKQzgWa6Iw9IqKwT/Portfolio---nicky?node-id=45-60&t=v66KgHHZcP7RwnmF-1", "https://github.com/Nick-Yanase/portfolio.git", "https://nicky-portfolio.vercel.app"],
     software: "yes",
     design: "yes",
   },

@@ -42,7 +42,7 @@ export default function CareerDetails() {
   }, [activeIndex]);
 
   return (
-    <section id="carreira" ref={sectionRef} className="relative w-full flex justify-center px-5 pt-12 pb-20 z-10 overflow-hidden">
+    <section id="carreira" ref={sectionRef} className="relative bg-violet-50 dark:bg-zinc-950 w-full flex justify-center px-5 pt-12 pb-20 z-10 overflow-hidden">
       <div className="w-full max-w-screen-xl flex flex-col items-center">
         <div className="titulo flex gap-2 items-center justify-center">
           <IconTargetArrow
@@ -69,22 +69,22 @@ export default function CareerDetails() {
          
             <article className="z-30">
               {/* menu mobile */}
-              <nav ref={menuRef} className="menu lg:hidden text-sm md:text-base">
+              <nav ref={menuRef} className="bg-violet-200 dark:bg-zinc-900 menu lg:hidden text-sm md:text-base">
                 <div ref={backgroundRef} className="background lg:hidden"></div>
                 <div
-                  className={`menu-item ${activeIndex === 0 ? "active" : ""}`}
+                  className={`menu-item ${activeIndex === 0 ? "active" : "dark:text-zinc-300 dark:hover:text-white"}`}
                   onClick={() => setActiveIndex(0)}
                 >
                   <IconBriefcase2 /> <p className="hidden lg:flex">Experiência</p>
                 </div>
                 <div
-                  className={`menu-item ${activeIndex === 1 ? "active" : ""}`}
+                  className={`menu-item ${activeIndex === 1 ? "active" : "dark:text-zinc-300 dark:hover:text-white"}`}
                   onClick={() => setActiveIndex(1)}
                 >
                    <IconSchool /> <p className="hidden lg:flex">Formação</p>
                 </div>
                 <div
-                  className={`menu-item ${activeIndex === 2 ? "active" : ""}`}
+                  className={`menu-item ${activeIndex === 2 ? "active" : "dark:text-zinc-300 dark:hover:text-white"}`}
                   onClick={() => setActiveIndex(2)}
                 >
                   <IconMedal /> <p className="hidden lg:flex">Certificados</p>
@@ -92,15 +92,15 @@ export default function CareerDetails() {
               </nav>
 
               {/* menu desktop */}
-              <nav ref={menuRef2} className="hidden lg:flex overflow-hidden relative bg-[#18181b] rounded-2xl p-4 items-start border-zinc-800 border z-20 lg:flex-col gap-8 w-full lg:w-[230px]">
+              <nav ref={menuRef2} className="hidden lg:flex overflow-hidden relative rounded-2xl p-4 items-start border-violet-200 dark:border-zinc-800 border z-20 lg:flex-col gap-8 w-full lg:w-[230px] bg-white   dark:bg-zinc-900">
                 <div ref={backgroundRef2} className="background2"></div>
-                <div className={`menu-item2 text-lg ${activeIndex === 0 ? "active" : ""}`} onClick={() => setActiveIndex(0)}>
+                <div className={`menu-item2 text-lg ${activeIndex === 0 ? "active" : "dark:text-zinc-300 dark:hover:text-white"}`} onClick={() => setActiveIndex(0)}>
                   <IconBriefcase2 /> <p className="hidden lg:flex">Experiência</p>
                 </div>
-                <div className={`menu-item2 text-lg ${activeIndex === 1 ? "active" : ""}`} onClick={() => setActiveIndex(1)}>
+                <div className={`menu-item2 text-lg ${activeIndex === 1 ? "active" : "dark:text-zinc-300 dark:hover:text-white"}`} onClick={() => setActiveIndex(1)}>
                   <IconSchool /> <p className="hidden lg:flex">Formação</p>
                 </div>
-                <div className={`menu-item2 text-lg ${activeIndex === 2 ? "active" : ""}`} onClick={() => setActiveIndex(2)}>
+                <div className={`menu-item2 text-lg ${activeIndex === 2 ? "active" : "dark:text-zinc-300 dark:hover:text-white"}`} onClick={() => setActiveIndex(2)}>
                   <IconMedal /> <p className="hidden lg:flex">Certificados</p>
                 </div>
               </nav>
@@ -109,7 +109,7 @@ export default function CareerDetails() {
 
           <article className="flex flex-col gap-12 items-start flex-1 lg:flex-none lg:w-[700px] relative z-20">
             <CarrerColumns sectionRef={sectionRef} activeIndex={activeIndex} />
-            <span className="w-[4px] h-full bg-zinc-800 rounded-lg absolute right-[60px] top-0 -z-10 hidden lg:flex" />
+            <span className="w-[4px] h-full bg-violet-200 dark:bg-zinc-800 rounded-lg absolute right-[60px] top-0 -z-10 hidden lg:flex" />
           </article>
         </div>
       </div>

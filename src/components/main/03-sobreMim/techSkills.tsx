@@ -16,7 +16,7 @@ export default function TechSkills(props: techSkillsProps) {
         <p className=" font-bold ">tech</p>
       </div>
 
-      <p className=" text-white">skills</p>
+      <p className="font-semibold text-indigo-700 dark:text-white">skills</p>
 
       <IconTriangleInvertedFilled
         className="size-7"
@@ -46,13 +46,13 @@ export default function TechSkills(props: techSkillsProps) {
           viewport={{ root: sectionRef, once: true }}
           className="flex flex-col items-center z-20"
         >
-          <div className="w-28 h-32 bg-purple-dark rounded-lg flex items-center justify-center relative group">
+          <div className="w-28 h-32 bg-violet-200 dark:bg-purple-dark rounded-lg flex items-center justify-center relative group">
             <div className="size-16 relative">
               <Image src={skill.image} alt={skill.name} fill />
             </div>
 
             {/*hover: borda*/}
-            <span className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#CAA6FF] to-[#6620FF] opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none before:absolute before:inset-[1.5px] before:bg-purple-dark before:rounded-lg flex items-center justify-center scale-105">
+            <span className="absolute inset-0 rounded-lg bg-violet-300 dark:bg-gradient-to-r from-[#CAA6FF] to-[#6620FF] opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none before:absolute dark:before:inset-[1.5px] dark:before:bg-purple-dark before:rounded-lg flex items-center justify-center scale-105">
               <div className="size-16 relative">
                 <Image src={skill.image} alt={skill.name} fill />
               </div>
