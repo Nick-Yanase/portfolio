@@ -13,7 +13,7 @@ export default function Info() {
       className="px-2 w-full md:w-3/5 flex flex-col gap-3 items-center md:items-start"
     >
       <h2 className="text-violet-900 dark:text-zinc-300 text-xl lg:text-2xl xl:text-4xl font-bold text-center md:text-start">
-        Olá, me chamo Nicolas Yanase
+       Olá, me chamo Nicolas Yanase
       </h2>
       <div className="w-full flex flex-col items-center md:items-start">
         <TextGradient

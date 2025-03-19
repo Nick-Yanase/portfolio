@@ -50,9 +50,9 @@ export default function Projetos() {
     visible: { opacity: 1, y: 0 },
   };
   return (
-    <motion.section id="projetos" ref={sectionRef} className="w-full flex justify-center items-center py-12 relative overflow-hidden bg-violet-100 dark:bg-zinc-950">
+    <motion.section id="projetos" ref={sectionRef} className="w-full flex justify-center items-center py-12 relative overflow-hidden bg-violet-50 dark:bg-zinc-950">
       <article className="w-full max-w-screen-2xl justify-center flex flex-col gap-8 z-20 items-center">
-        <div className="titulo flex gap-2 items-center">
+        <div className="titulo flex gap-2 items-center ">
           <IconCubeSpark
             style={{ stroke: "url(#iconGradient)" }}
             className="size-9"
@@ -77,22 +77,22 @@ export default function Projetos() {
           </TextGradient>
         </div>
 
-        <div ref={menuRef} className="menu text-sm md:text-base">
+        <div ref={menuRef} className="menu text-sm md:text-base bg-violet-200 dark:bg-zinc-900 ">
           <div ref={backgroundRef} className="background"></div>
           <div
-            className={`menu-item ${activeIndex === 0 ? "active" : ""}`}
+            className={`menu-item  ${activeIndex === 0 ? "active" : "dark:text-zinc-300 dark:hover:text-white"}`}
             onClick={() => setActiveIndex(0)}
           >
             Todos
           </div>
           <div
-            className={`menu-item ${activeIndex === 1 ? "active" : ""}`}
+            className={`menu-item  ${activeIndex === 1 ? "active" : "dark:text-zinc-300 dark:hover:text-white"}`}
             onClick={() => setActiveIndex(1)}
           >
             Softwares
           </div>
           <div
-            className={`menu-item ${activeIndex === 2 ? "active" : ""}`}
+            className={`menu-item  ${activeIndex === 2 ? "active " : "dark:text-zinc-300 dark:hover:text-white"}`}
             onClick={() => setActiveIndex(2)}
           >
             UI & UX

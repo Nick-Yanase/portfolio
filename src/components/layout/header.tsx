@@ -17,12 +17,12 @@ export default function Header() {
       <nav className="flex items-center justify-between max-w-screen-2xl w-full py-2 px-5 md:py-4 gap-4 lg:gap-10">
         <Logotipo />
         <div className="flex justify-end items-center size-full gap-4 md:gap-6 lg:gap-10">
-          <ListaNav className={"hidden md:flex text-sm md:text-base lg:gap-10"}/>
+          <ListaNav className={"hidden md:flex text-sm md:text-base lg:gap-10 text-violet-950 dark:text-zinc-400"}/>
           <div className="flex gap-8">
             <span className="hidden md:flex h-12 w-[1.5px] rounded-lg bg-zinc-300 dark:bg-zinc-600 "></span>
             <button
               onClick={toggleTheme} 
-              className="relative flex items-center justify-center">
+              className="hidden md:flex relative items-center justify-center">
               <IconSun className="absolute transition-transform duration-500 ease-out hover:text-purple2 hover:rotate-90 dark:scale-0 scale-100 " size={24}/>
               <IconMoon className="absolute transition-transform duration-500 ease-out dark:text-zinc-400 dark:hover:text-purple-light hover:rotate-180 dark:scale-100 scale-0 " size={24}/>
             </button>
@@ -51,7 +51,7 @@ export default function Header() {
                   </p>
                 </div>
                 
-                <ListaNav className={"flex-col pt-4"}/>
+                <ListaNav className={"flex-col pt-4 text-violet-950 dark:text-zinc-400"}/>
                 </SheetHeader>
               </SheetContent>
             </Sheet>
