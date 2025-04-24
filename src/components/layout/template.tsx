@@ -17,7 +17,7 @@ export default function Template(props: templateProps) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false); // Oculta o Preloader
-      setTimeout(() => setShowContent(true), 900); // Mostra o conteúdo após a transição
+      setTimeout(() => setShowContent(true), 1000); // Mostra o conteúdo após a transição
     }, 20); // Simula um carregamento de 2 segundos
     return () => clearTimeout(timer);
   }, []);

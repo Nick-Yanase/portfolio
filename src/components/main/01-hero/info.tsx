@@ -22,7 +22,7 @@ export default function Info() {
           className="  text-4xl md:text-5xl xl:text-6xl font-bold py-1 lg:py-2 text-center md:text-start"
         >
           {" "}
-          Desenvolvedor Web +
+          Fullstack Developer +
         </TextGradient>
         <TextGradient
            primaryColor="#B96FFF"

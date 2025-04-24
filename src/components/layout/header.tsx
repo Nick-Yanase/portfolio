@@ -23,8 +23,8 @@ export default function Header() {
             <button
               onClick={toggleTheme} 
               className="hidden md:flex relative items-center justify-center">
-              <IconSun className="absolute transition-transform duration-500 ease-out hover:text-purple2 hover:rotate-90 dark:scale-0 scale-100 " size={24}/>
-              <IconMoon className="absolute transition-transform duration-500 ease-out dark:text-zinc-400 dark:hover:text-purple-light hover:rotate-180 dark:scale-100 scale-0 " size={24}/>
+              <IconMoon className="absolute transition-transform duration-500 ease-out hover:text-purple2 hover:rotate-90 dark:scale-0 scale-100 " size={24}/>
+              <IconSun className="absolute transition-transform duration-500 ease-out dark:text-zinc-400 dark:hover:text-purple-light hover:rotate-180 dark:scale-100 scale-0 " size={24}/>
             </button>
             <span className="hidden md:flex h-12 w-[1.5px] rounded-lg bg-zinc-300 dark:bg-zinc-600 "></span>
           </div>

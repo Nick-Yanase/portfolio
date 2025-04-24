@@ -17,9 +17,19 @@ const skills: Skill[] = [
     image: "/images/skills/CSS.svg",
   },
   {
+    id: 11,
+    name: "Bootstrap",
+    image: "/images/skills/bootstrap.svg",
+  },
+  {
     id: 4,
     name: "Javascript",
     image: "/images/skills/JS.svg",
+  },
+  {
+    id: 12,
+    name: "Typescript",
+    image: "/images/skills/TS.svg",
   },
   {
     id: 5,
@@ -47,9 +57,24 @@ const skills: Skill[] = [
     image: "/images/skills/Next.js.svg",
   },
   {
+    id: 14,
+    name: "ShadCN/UI",
+    image: "/images/skills/shadCN.svg",
+  },
+  {
     id: 10,
     name: "MongoDB",
     image: "/images/skills/MongoDB.svg",
+  },
+  {
+    id: 15,
+    name: "Oracle",
+    image: "/images/skills/oracle.svg",
+  },
+  {
+    id: 13,
+    name: "Python",
+    image: "/images/skills/python.svg",
   },
 ];
 
