@@ -30,7 +30,7 @@ export default function InfoMe(props: infoMeProps) {
           <p className="font-semibold text-lg text-violet-900 dark:text-white">
             Nicolas Yanase, 20 anos
           </p>
-          <p className="font-medium text-violet-500 dark:text-zinc-400">(11) 96620 - 6286</p>
+          <p className="font-medium text-violet-500 dark:text-zinc-400">(11) 95520 - 6286</p>
         </div>
       </motion.div>
 
