@@ -2,6 +2,19 @@ import certification from "../models/certification";
 
 const certifications: certification[] = [
   {
+    id: 7,
+    data: "Abril 2025",
+    titulo: "Desenvolvedor front-end",
+    organizacao: "Centro Paulza Souza",
+    skills: [
+      "Engenharia de software", "UX design", "Metodologias ageis", "Levantamento de requisitos"
+    ],
+ 
+    iconOrg: "/images/career/certification/CPS.png",
+    certificationImage:"/images/career/certification/dev-frontend.png"
+
+  },
+  {
     id: 6,
     data: "Março de 2025",
     titulo: "Google AI Essentials",

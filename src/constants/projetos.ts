@@ -2,6 +2,16 @@ import Projeto from "../models/projeto";
 
 const projetos: Projeto[] = [
   {
+    id: 13,
+    name: "Printer Bot",
+    desc: "Uma aplicação inteligente desenvolvida para automatizar a coleta de contadores de impressoras, eliminando processos manuais e otimizando o tempo da equipe.",
+    image: "/images/projects/printer-bot.png",
+    stacks: ["Next.js", "Node.js", "Typescript", "Python"],
+    linkProjects: ["", "https://github.com/R4ULz/go-planner.git", "https://www.linkedin.com/posts/nicolas-yanase_automatiza%C3%A7%C3%A3o-que-gera-resultados-reais-activity-7333612548207898626-QQ3v?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEF3GAwBYafo7IJa6m7WL9RpPbMtV5BFcrA"],
+    software: "yes",
+    design: "",
+  },
+  {
     id: 1,
     name: "Go.planner",
     desc: "Uma plataforma interativa desenvolvida para tornar o  planejamento de viagens mais simples e divertido.",
@@ -91,16 +101,16 @@ const projetos: Projeto[] = [
     software: "yes",
     design: "",
   }, 
-  {
-    id: 10,
-    name: "Forms light/dark mode",
-    desc: "Aplicação de formulários com modos claro e escuro, oferecendo uma experiência personalizável e acessível.",
-    image: "/images/projects/light-dark.png",
-    stacks: ["HTML5", "CSS3", "JS"],
-    linkProjects: ["", "https://github.com/Nick-Yanase/Pagina-Login-Dark-Light.git", "https://pagina-login-dark-light.vercel.app"],
-    software: "yes",
-    design: "",
-  },
+  // {
+  //   id: 10,
+  //   name: "Forms light/dark mode",
+  //   desc: "Aplicação de formulários com modos claro e escuro, oferecendo uma experiência personalizável e acessível.",
+  //   image: "/images/projects/light-dark.png",
+  //   stacks: ["HTML5", "CSS3", "JS"],
+  //   linkProjects: ["", "https://github.com/Nick-Yanase/Pagina-Login-Dark-Light.git", "https://pagina-login-dark-light.vercel.app"],
+  //   software: "yes",
+  //   design: "",
+  // },
   {
     id: 11,
     name: "Bikcraft",

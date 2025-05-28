@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Projeto from "@/app/models/projeto";
+import Projeto from "@/models/projeto";
 import Btn from "@/components/button";
 import { IconBrandFigma, IconBrandGithub, IconWebhook } from "@tabler/icons-react";
 import { RefObject } from "react";
