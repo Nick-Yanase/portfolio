@@ -12,9 +12,8 @@ const formacoes: Formacao[] = [
       "Desenvolvimento de softwares", 
       "Análise de dados",
       "UX & UI Design",
-      "Engenharia de softweare"
+      "Engenharia de software"
     ]
-
  },
  {
   id:  2,
@@ -29,7 +28,6 @@ const formacoes: Formacao[] = [
       "Gestão de banco de dados",
       "Gestão de projetos"
     ]
-
  },
 ]
 

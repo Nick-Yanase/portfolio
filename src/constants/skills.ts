@@ -24,7 +24,7 @@ const skills: Skill[] = [
   {
     id: 4,
     name: "Javascript",
-    image: "/images/skills/JS.svg",
+    image: "/images/skills/js.svg",
   },
   {
     id: 12,

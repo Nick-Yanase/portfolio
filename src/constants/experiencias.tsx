@@ -2,8 +2,22 @@ import Experiencia from "../models/experiencia"
 
 const experiencias: Experiencia[] = [
  {
+  id:2,
+  data: "08/2025 - Atualmente",
+  titulo: "Estágio em dev",
+  organizacao: "Yoodash",
+  iconOrg: "/images/career/experience/yoodash.png",
+  skills:[
+    "Desenvolvimento de Mobile", 
+    "Automação de Web",
+    "Versionamento",
+    "Metodologia Agil"
+  ]
+
+ },
+ {
   id:1,
-  data: "08/2024 - Atualmente",
+  data: "08/2024 - 08/2025",
   titulo: "Estágio em TI",
   organizacao: "hospital sagrada família",
   iconOrg: "/images/career/experience/HSF.png",
