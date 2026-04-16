@@ -2,6 +2,26 @@ import Projeto from "../models/projeto";
 
 const projetos: Projeto[] = [
   {
+    id: 16,
+    name: "Go.planner - Mobile",
+    desc: "Trazendo o a plataforma go.planner para o ambiente mobile, com uma interface otimizada e recursos adicionais como IA",
+    image: "/images/projects/go-planner-mobile.png",
+    stacks: ["React Native", "Spring Boot", "IA", "Python"],
+    linkProjects: ["https://www.figma.com/design/D3c6UkWiO15EMirUcJVgJq/Go.planner?node-id=1378-2546&t=p1Wh9oq7Dmaaspnt-1", "https://github.com/Bonde-do-tigrinho/Go-Planner-Mobile.git", ""],
+    software: "yes",
+    design: "yes",
+  },
+  {
+    id: 15,
+    name: "Buscador de Imóveis",
+    desc: "Um buscador de imóveis que realiza web scraping em sites de instituições financeiras, reunindo oportunidades de imóveis em leilão ou venda direta em uma única plataforma.",
+    image: "/images/projects/buscador-imoveis.png",
+    stacks: ["Next.js", "MongoDB", "Docker", "Python"],
+    linkProjects: ["https://www.figma.com/design/cmjFKQEqScnIXfEFAs2AQY/Buscador-leil%C3%B5es?node-id=63-266&t=IQJiGyW9z3mowpzZ-1", "https://github.com/LeandroRodrigues061/PI-Motor-de-Busca-4-sem.git", ""],
+    software: "yes",
+    design: "yes",
+  },
+  {
     id: 14,
     name: "Herohub",
     desc: "Aplicação web para explorar e favoritar heróis do universo dos quadrinhos, com interface moderna, responsiva e funcionalidades avançadas de busca, ordenação e navegação.",
