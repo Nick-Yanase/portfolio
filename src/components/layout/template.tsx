@@ -1,9 +1,9 @@
-'use client';
+"use client";
 import { useEffect, useState } from "react";
 import Footer from "./footer";
 import Header from "./header";
 import PreloaderAnime from "../preloaderAnime";
-import { Toaster } from "@/components/ui/sonner"
+import { Toaster } from "@/components/ui/sonner";
 
 export interface templateProps {
   children: React.ReactNode;
@@ -24,13 +24,13 @@ export default function Template(props: templateProps) {
 
   return (
     <div
-      className={`w-full h-screen bg-[#120B24] transition-all duration-500`}
+      className={`w-full min-h-screen bg-[#F8F7FF] dark:bg-[#120B24] transition-colors duration-500`}
     >
       {/* Preloader */}
       {loading && (
         <div
           className={`w-full h-full absolute inset-0 transition-opacity duration-200 ${
-            showContent ? 'opacity-0' : 'opacity-100'
+            showContent ? "opacity-0" : "opacity-100"
           }`}
         >
           <PreloaderAnime />
@@ -41,12 +41,12 @@ export default function Template(props: templateProps) {
       {!loading && (
         <div
           className={`flex flex-col transition-opacity duration-500 ${
-            showContent ? 'opacity-100' : 'opacity-0'
+            showContent ? "opacity-100" : "opacity-0"
           }`}
         >
           <Header />
           <main
-            className={`w-full flex-col flex justify-center items-center overflow-hidden ${props.className ?? ''}`}
+            className={`w-full flex-col flex justify-center items-center ${props.className ?? ""}`}
           >
             {props.children}
           </main>
