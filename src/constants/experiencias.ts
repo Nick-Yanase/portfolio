@@ -8,9 +8,9 @@ const experiencias: Experiencia[] = [
     organizacao: "Yoodash",
     iconOrg: "/images/career/experience/yoodash.png",
     skills: [
-      "Desenvolvimento de Mobile",
-      "Automação de Web",
+      "Desenvolvimento fullstack",
       "Versionamento",
+      "Gerenciamento de banco de dados",
       "Metodologia Agil",
     ],
   },

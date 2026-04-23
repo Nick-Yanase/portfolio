@@ -28,7 +28,7 @@ export default function InfoMe(props: infoMeProps) {
 
         <div>
           <p className="font-semibold text-lg text-violet-900 dark:text-white">
-            Nicolas Yanase, 20 anos
+            Nicolas Yanase, 21 anos
           </p>
           <p className="font-medium text-violet-500 dark:text-zinc-400">(11) 95520 - 6286</p>
         </div>
@@ -41,16 +41,25 @@ export default function InfoMe(props: infoMeProps) {
         viewport={{ root: sectionRef, once: true }}
         className="text-zinc-700 dark:text-zinc-300 flex flex-col gap-4 sm:px-10 md:p-0 items-start"
       >
-        <p>
-          Desenvolvedor de software e designer com experiência na criação de
-          aplicações usando tecnologias modernas como React, Node.js e MongoDB.
-          💻
+        <p className="font-semibold text-violet-400">
+          Full-Stack Developer | Kotlin, Java, Node.js & React ⚡
         </p>
         <p>
-          Meu foco é entender a necessidade do negócio e transformá-la em
-          soluções práticas e eficientes, sempre aproveitando as melhores
-          ferramentas e práticas do mercado. 🚀
+          Desenvolvedor focado em performance e escalabilidade. Experiência na criação de sistemas mobile e web, integração de modelos de IA e análise de dados massivos com BigQuery. Transformo requisitos complexos em arquiteturas simples e funcionais.</p>
+        <p>
+          No dia a dia, foco em transformar necessidades reais em software que funciona, unindo o aprendizado acadêmico na FATEC com a experiência prática em agência, busco sempre as melhores ferramentas para entregar resultados eficientes, mantendo um código organizado e fácil de manter.
         </p>
+        <div className="w-full flex flex-wrap gap-4 ">
+           <span className="inline-flex items-center gap-2 rounded-lg border border-fuchsia-400/40 bg-fuchsia-400/10 px-3 py-1 text-sm text-fuchsia-700 dark:text-fuchsia-200">
+            🏐 Volleyball player
+           </span>
+           <span className="inline-flex items-center gap-2 rounded-lg border border-fuchsia-400/40 bg-fuchsia-400/10 px-3 py-1 text-sm text-fuchsia-700 dark:text-fuchsia-200">
+            🎮 Gaming & Strategy
+           </span>
+           <span className="inline-flex items-center gap-2 rounded-lg border border-fuchsia-400/40 bg-fuchsia-400/10 px-3 py-1 text-sm text-fuchsia-700 dark:text-fuchsia-200">
+            💻 Always Improving
+           </span>
+        </div>
         <SocialMedia className="flex mx-auto md:mx-0 md:text-start justify-center lg:justify-between items-center gap-10 z-20 md:mt-4" />
       </motion.div>
     </article>
