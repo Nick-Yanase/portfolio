@@ -42,7 +42,7 @@ export default function CarrerColumns(props: carrerColumnsProps) {
         >
           {experiencias.map((experiencia) => (
             <motion.div
-              key={experiencia.id}
+              key={`${experiencia.id}-${experiencia.organizacao}-${experiencia.data}`}
               variants={itemVariants}
               className="w-full flex gap-20 items-center px-1"
             >
@@ -76,7 +76,7 @@ export default function CarrerColumns(props: carrerColumnsProps) {
         >
           {formacoes.map((formacao) => (
             <motion.div
-              key={formacao.id}
+              key={`${formacao.id}-${formacao.organizacao}-${formacao.data}`}
               variants={itemVariants}
               className="w-full flex gap-20 items-center px-1"
             >
@@ -110,7 +110,7 @@ export default function CarrerColumns(props: carrerColumnsProps) {
         >
           {certifications.map((certification) => (
             <motion.div
-              key={certification.id}
+              key={`${certification.id}-${certification.organizacao}-${certification.data}`}
               variants={itemVariants}
               className="w-full flex gap-20 items-center px-1"
             >

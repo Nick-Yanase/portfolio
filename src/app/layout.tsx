@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br"> {/* Adiciona a classe da fonte diretamente na tag <html> */}
+    <html lang="pt-br"> 
       <head>
         <link rel="icon" type="image/png" sizes="32x32" href="/fav.ico" />
       </head>

@@ -28,7 +28,7 @@ const experiencias: Experiencia[] = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     data: "04/2022 - 07/2024",
     titulo: "Designer / dev",
     organizacao: "freelancer",

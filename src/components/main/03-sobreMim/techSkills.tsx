@@ -11,12 +11,12 @@ export default function TechSkills(props: techSkillsProps) {
   const { sectionRef } = props;
   return (
     <article className="w-full md:w-8/12 flex flex-col gap-8 md:gap-4 items-center md:items-end">
-      <p className="uppercase font-medium flex gap-2 text-3xl items-center w-full justify-center md:justify-end">
+      <div className="uppercase font-medium flex gap-2 text-3xl items-center w-full justify-center md:justify-end">
         <div className="bg-gradient-to-r from-[#3B6AFF] to-[#6620FF] bg-[length:160%_100%] bg-clip-text text-transparent w-fit">
-          <p className=" font-bold ">tech</p>
+          <span className="font-bold">tech</span>
         </div>
 
-        <p className="font-semibold text-indigo-700 dark:text-white">skills</p>
+        <span className="font-semibold text-indigo-700 dark:text-white">skills</span>
 
         <IconTriangleInvertedFilled
           className="size-7"
@@ -29,7 +29,7 @@ export default function TechSkills(props: techSkillsProps) {
             </linearGradient>
           </defs>
         </IconTriangleInvertedFilled>
-      </p>
+      </div>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-16 md:gap-8 justify-end">
         {skills.map((skill) => (
           <motion.div
